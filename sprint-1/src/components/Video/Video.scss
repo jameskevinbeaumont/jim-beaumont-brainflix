@@ -1,0 +1,24 @@
+@import "../../partials/common";
+
+.video {
+    // height: 183px;
+    position: relative;
+    display: flex;
+    height: 20vh;
+    width: 100vw;
+    &-player {
+        position: absolute;
+        width: 100vw;
+    }
+    // &-play-icon {
+    //     position: absolute;
+    //     top: 16vh; //150
+    //     left: 12vw; //24
+    // }
+    // &-scrub-icon {
+    //     position: absolute;
+    //     top: 16vh; //150
+    //     left: 12vw; //24
+    // }
+}
+

@@ -1,0 +1,15 @@
+@import "../../partials/common";
+
+.sidevideolist {
+    @include flex-center;
+    flex-direction: column;
+    @include padding-lr(5%, 5%);
+    font-family: $font-family;
+    &-title {
+        @include mobile-h5-label($color-text-label-style);
+        font-weight: 500;
+        width: 100%;        
+        @include padding-lr(5%, 5%);
+        @include padding-tb(3vh, 2vh);
+    }
+}

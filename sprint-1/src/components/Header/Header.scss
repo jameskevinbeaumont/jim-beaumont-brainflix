@@ -5,8 +5,15 @@
     flex-direction: column;
     width: 100%;
 	height: 169px;
-	&__container {
+	&__container-right {
 		display: flex;
+		justify-content: center;
+		height: 48px;
+		width: 100vw;
+	}
+	&__container-left {
+		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 		height: 48px;
 		width: 100vw;
@@ -15,11 +22,14 @@
 		display: flex;
 		width: 45px;
 		height: 45px;
-		margin-top: 1.25vh;
+		margin-top: .25vh;
 	}
 	&-logo {
 		width: 124px;
 		height: 48px;
+	}
+	&-search-container {
+		position: relative;
 	}
 	&-search {
 		width: 288px;
@@ -27,12 +37,16 @@
 		padding-left: 26px;
 		margin-bottom: 1vh;
 	}
+	&-search-icon {
+		position: absolute;
+		top: 16px;
+		left: 10px;
+	}
 	&-upload-button {
 		color: $color-text-offset;
 		background-color: $color-primary-cta;
 		height: 49px;
 		width: 228px;
-		margin-top: 1vh;
 		margin-right: 16px;
 		border: none;
 		border-radius: 4px;

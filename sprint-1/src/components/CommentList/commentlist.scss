@@ -1,0 +1,19 @@
+@import "../../partials/common";
+
+.comments {
+    /* Comments Block */
+    @include flex-center;
+    flex-direction: column;
+    @include padding-lr(5%, 5%);
+    &__history {
+        /* Comments Block - History Element */
+        width: 90vw;
+        // @include tablet {
+        //     width: 68vw;
+        // }
+        // @include desktop {
+        //     width: 46vw;
+        //     padding-left: 6vw;
+        // }
+    }
+}

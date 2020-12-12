@@ -1,22 +1,42 @@
-@import "../../partials/common";
+@import "../../styles/styles.scss";
 
 .header {
     display: flex;
     flex-direction: column;
     width: 100%;
 	height: 169px;
-	&__container-right {
+	@include mob-tab-int {
+		height: 110px;
+	}
+	@include tablet {
+		flex-direction: row;
+		height: 80px;
+		@include padding-tb(16px, 16px);
+		@include padding-lr(3.125%, 3.125%);
+	}
+	@include desktop {
+		@include padding-lr(12.5%, 12.5%);
+	}
+	&__container-left {
 		display: flex;
 		justify-content: center;
 		height: 48px;
 		width: 100vw;
+		@include tablet {
+			justify-content: flex-start;
+			width: 25vw;
+		}
 	}
-	&__container-left {
+	&__container-right {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		height: 48px;
 		width: 100vw;
+		@include tablet {
+			justify-content: flex-end;
+			width: 75vw;
+		}
 	}
 	&__image {
 		display: flex;
@@ -34,8 +54,19 @@
 	&-search {
 		width: 288px;
 		height: 48px;
-		padding-left: 26px;
+		padding-left: 34px;
 		margin-bottom: 1vh;
+		border: 1px solid $color-text-label-style;
+		border-radius: 4px;
+		outline: none;
+		background-color: $color-text-field-bg-fill;
+		&:focus {
+			border: 2px solid $color-form-input-focus;
+		}
+		@include mob-tab-int {
+			width: 248px;
+			margin-right: 24px;
+		}
 	}
 	&-search-icon {
 		position: absolute;
@@ -52,6 +83,10 @@
 		border-radius: 4px;
 		&:hover {
 			background-color: $color-primary-cta-hover;
+		}
+		@include mob-tab-int {
+			width: 100px;
+			margin-right: 24px;
 		}
 	}
 	&-image {

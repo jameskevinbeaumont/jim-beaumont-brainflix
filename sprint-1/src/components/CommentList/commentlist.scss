@@ -1,19 +1,14 @@
-@import "../../partials/common";
+@import "../../styles/styles.scss";
 
 .comments {
-    /* Comments Block */
     @include flex-center;
     flex-direction: column;
     @include padding-lr(5%, 5%);
     &__history {
-        /* Comments Block - History Element */
         width: 90vw;
-        // @include tablet {
-        //     width: 68vw;
-        // }
-        // @include desktop {
-        //     width: 46vw;
-        //     padding-left: 6vw;
-        // }
+        @include desktop {
+            @include padding-lr(22.5%, 16.5%);
+            width: 70vw;
+        }
     }
 }

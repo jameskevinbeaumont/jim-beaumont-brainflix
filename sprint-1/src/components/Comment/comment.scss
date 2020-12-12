@@ -1,12 +1,14 @@
-@import "../../partials/common";
+@import "../../styles/styles.scss";
 
 .comment {
     /* Comment Block */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    @include padding-lr(5%, 5%);
-    font-family: $font-family;
+    padding-left: 4%;
+    @include desktop {
+        padding: 0;
+    }
     &__image {
         /* Comment Block - Image Element */
         display: flex;
@@ -30,31 +32,32 @@
         flex-direction: column;
         width: 82%;
         padding-left: 5%;
+        @include desktop {
+            width: 90%;
+        }
     }
     &__header {
-        /* Comment Block - Header Element */
         display: flex;
         flex-direction: row;
         width: 100%;
         padding-top: .75vh;
         &-name {
-            /* Comment Block - Header Name Element */
             @include mobile-h4-list-contact(600);
             width: 70%;
-            // @include tablet {
-            //     width: fit-content;
-            // }
+            @include tablet {
+                width: fit-content;
+            }
         }
         &-ts {
             /* Comment Block - Header TS (Time Stamp) Element */
             @include mobile-h4-list-contact(400);
-            width: 60%;
+            width: 40%;
             color: $color-text-label-style;
-            text-align: right;
-            // @include tablet {
-            //     width: fit-content;
-            //     padding-left: 2%;
-            // }
+            margin-right: -64px;
+            @include tablet {
+                width: fit-content;
+                padding-left: 2%;
+            }
         }
     }
     &__comments {
@@ -65,44 +68,27 @@
         &-text {
             width: 100%;
             @include padding-tb(3%, 3%);
-            // &::before{
-            //     content: attr(del-tooltip);
-            //     display:none;
-            //     top: -1vw;
-            //     font-size: 9px;
-            //     color: white;
-            //     border-radius:4px;
-            //     background: rgba(0, 0, 0, 0.5);
-            //     width: 66px;
-            //     @include tablet {
-            //         width: 72px;
-            //         top: -.65vw;
-            //         font-size: 10px;
-            //         }
-            //     @include desktop {
-            //         top: -.25vw;
-            //     }
-            // }
-            // &:hover::before {
-            //     position:absolute;
-            //     display: block;
-            // }
+            @include tablet {
+                width: 100%;
+            }
         }
     }
     &__divider {
         /* Comment Block - Divider Element */
         border-top: 1px solid $color-divider;
-        width: 90%;
+        width: 97%;
         margin-top: 1.5vh;
         margin-bottom: 2.25vh;
-        margin-left: 4vw;
-        // @include tablet {
-        //     width: 68vw;
-        // }
-        // @include desktop {
-        //     width: 37vw;
-        //     margin-left: 0;
-        //     margin-right: 0;
-        // }
+        margin-left: 6vw;
+        @include tablet {
+            width: 100%;
+            margin-top: .5vh;
+            margin-bottom: 1.25vh;
+            margin-left: 28px;
+            }
+        @include desktop {
+            width: 100%;
+            margin-left: 0;
+        }
     }
 }

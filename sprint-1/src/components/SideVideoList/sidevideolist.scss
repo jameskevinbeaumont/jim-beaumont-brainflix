@@ -1,15 +1,24 @@
-@import "../../partials/common";
+@import "../../styles/styles.scss";
 
 .sidevideolist {
     @include flex-center;
     flex-direction: column;
     @include padding-lr(5%, 5%);
     font-family: $font-family;
+    @include desktop {
+        padding: 0;
+    }
     &-title {
         @include mobile-h5-label($color-text-label-style);
         font-weight: 500;
         width: 100%;        
         @include padding-lr(5%, 5%);
-        @include padding-tb(3vh, 2vh);
+        @include padding-tb(1vh, 2vh);
+        @include tablet {
+            padding-left: 3.125%;
+        }
+        @include desktop {
+            padding-top: 3.5vh;
+        }
     }
 }

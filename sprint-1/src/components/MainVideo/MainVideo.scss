@@ -1,0 +1,109 @@
+@import "../../styles/styles.scss";
+
+.video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: black;
+    &-player {
+        width: 100%;
+        @include tablet {
+            width: 90%;
+        }
+        @include desktop {
+            width: 65%;
+        }
+    }
+    &-controls {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        height: 40px;
+        bottom: 8px;
+        @include tablet {
+            width: 90%;
+        }
+        @include desktop {
+            width: 65%;
+        }
+    }
+    &-play-container {
+        background-color: rgba(50,50,50,0.7);
+        border-radius: 4px;
+        width: 60px;
+        height: 38px;
+        margin-left: 10px;
+    }
+    &-play-icon {
+        height: 24px;
+        width: 24px;
+        margin-top: 7px;
+        margin-left: 20px;
+    }
+    &-loader-container {
+        display: flex;
+        background-color: rgba(50,50,50,0.7);
+        border-radius: 4px;
+        width: 40%; //126px;
+        height: 38px;
+        margin-left: 8px;
+        margin-right: 8px;
+        @include tablet {
+            width: 70%
+        }
+        @include tablet {
+            width: 78%
+        }
+    }
+    &-loader {
+        background-color: black;
+        width: 75%;
+        height: 4px;
+        margin-top: 16px;
+        margin-left: 4.75vw; //16px
+        @include tablet {
+            width: 100%;
+            margin-left: 1vw;
+        }
+        @include desktop {
+            width: 120%;
+            margin-left: 1vw;
+        }
+        @include desktop-14 {
+            width: 155%;
+        }
+    }
+    &-loader-time {
+        display: none;
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            color: $color-text-offset;
+            @include mobile-h4-list-contact;
+            width: 20%;
+            padding-top: 9px;
+            padding-right: 20px;
+        }
+    }
+    &-fullscreen-volume-container {
+        background-color: rgba(50,50,50,0.7);
+        border-radius: 4px;
+        width: 85px;
+        height: 38px;
+        margin-right: 10px;
+    }
+    &-fullscreen-icon {
+        height: 20px;
+        width: 20px;
+        margin-top: 9px;
+        margin-left: 17px;
+    }
+    &-volume-icon {
+        height: 20px;
+        width: 20px;
+        margin-left: 12px;
+    }
+}

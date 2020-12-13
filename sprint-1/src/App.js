@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import {videoData, commentData, mainVideoObject} from './js/loadSampleData';
+import {GetVideoData, InitializeMVO, GetMainVideoObject} from './js/loadSampleData';
 import Header from './components/Header/Header';
 import MainVideo from './components/MainVideo/MainVideo';
 import VideoDesc from './components/VideoDesc/VideoDesc';
@@ -11,34 +11,37 @@ import SideVideoList from './components/SideVideoList/SideVideoList';
 class App extends React.Component {
   // State initialization
   state = {
-    videos: videoData(),
-    comments: commentData(),
-    mainvidobj: mainVideoObject() 
+    videos: [],
+    mainvideo: InitializeMVO() 
   };
 
-  // Functions
-  loadVideos = () => {
-    console.log('test')
-    if (this.state.videos && this.state.videos.length > 0) {
-      // console.log(this.state.videos);
-      return;
-    } else {
-      const sideVideos = videoData();
-      this.setState({videos: sideVideos});
-    }
+  componentDidMount() {
+    GetVideoData()
+    .then(result => {
+      let firstVideo = result[0]
+      let sideVideos = result.splice(1, result.length - 1)
+      this.setState({videos: sideVideos})
+      return GetMainVideoObject(firstVideo)
+    })
+    .then(result => {
+     this.setState({mainvideo: result})
+    })
+    .catch(err => console.log('Error=>', err.response));
+  };
+
+  componentWillUnmount() {
   };
 
   render() {
     return (
-      <div className="body">
-        {/* {this.loadVideos()} */}
+      <div>
         <Header />
-        <MainVideo mainVideoObj={this.state.mainvidobj}/>
+        <MainVideo mainVideoObj={this.state.mainvideo}/>
         <main className="main">
           <div className="main-left">
-            <VideoDesc mainVideoObj={this.state.mainvidobj}/>
+            <VideoDesc mainVideoObj={this.state.mainvideo}/>
             <NewComment />
-            <CommentList videoComments={this.state.mainvidobj.comments}/>
+            <CommentList videoComments={this.state.mainvideo.comments}/>
           </div>
           <div className="main-right">
             <SideVideoList videoList={this.state.videos}/>

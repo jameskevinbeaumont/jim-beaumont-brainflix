@@ -11,7 +11,7 @@ export default function VideoDesc ({mainVideoObj}) {
         <div className="videodesc__header">
             <div className="videodesc__header--left">
                 <h4 className="videodesc__author">By {mainVideoObj.channel}</h4>
-                <h5 className="videodesc__date">12/18/2018</h5>
+                <h5 className="videodesc__date">{mainVideoObj.timestamp}</h5>
             </div>
             <div className="videodesc__header--right">
                 <img className="videodesc__view-img" src={iconViews} alt="views icon" />

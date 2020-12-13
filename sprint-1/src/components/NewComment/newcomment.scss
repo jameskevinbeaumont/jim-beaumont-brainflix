@@ -98,12 +98,8 @@
                 padding-top: 1vh;
                 padding-left: 3%;
             }
-            // @include desktop-12-to-14 {
-            //     width: 90%;
-            // }
             @include desktop {
                 width: 98%;
-                // width: 100%;
             }
         }
         &-button {
@@ -125,9 +121,6 @@
                 margin-left: 82px;
                 margin-top: 20px;
             }
-            // @include desktop-12-to-14 {
-            //     width: 95%;
-            // }
             @include desktop {
                 margin-left: 18px;
             }

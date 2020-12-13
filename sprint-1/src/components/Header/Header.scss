@@ -54,8 +54,8 @@
 	&-search {
 		width: 288px;
 		height: 48px;
-		padding-left: 34px;
-		margin-bottom: 1vh;
+		padding-left: 42px;
+		margin-bottom: 1.25vh;
 		border: 1px solid $color-text-label-style;
 		border-radius: 4px;
 		outline: none;
@@ -71,13 +71,18 @@
 	&-search-icon {
 		position: absolute;
 		top: 16px;
-		left: 10px;
+		left: 16px;
 	}
 	&-upload-button {
 		color: $color-text-offset;
 		background-color: $color-primary-cta;
 		height: 49px;
 		width: 228px;
+        background-image: url('../../assets/icons/Icon-upload.svg');
+        background-repeat: no-repeat;
+        background-position: 74px 16px;
+        text-align: left;
+        text-indent: 100px;
 		margin-right: 16px;
 		border: none;
 		border-radius: 4px;

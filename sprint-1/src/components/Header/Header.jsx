@@ -4,7 +4,6 @@ import './Header.scss';
 export default function Header () {
     const logoPath = './assets/logos/Logo-brainflix.svg';
     const iconSearch = './assets/icons/Icon-search.svg';
-    const iconUpload = './assets/icons/Icon-upload.svg';
     const navImage = './assets/images/Mohan-muruge-sq.jpg';
 
     return (
@@ -17,7 +16,7 @@ export default function Header () {
                 <img className="header-search-icon" src={iconSearch} alt="search icon"/>
                 <input className="header-search" placeholder="Search" />
             </div>
-                <button className="header-upload-button"><img src={iconUpload} alt="upload icon"/> UPLOAD</button>
+                <button className="header-upload-button"> UPLOAD</button>
                 <div className="header__image">
                     <img className="header-image" src={navImage} alt="mohan muruge" />
             </div>

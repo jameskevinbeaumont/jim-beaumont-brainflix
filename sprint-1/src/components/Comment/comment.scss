@@ -5,12 +5,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
     padding-left: 4%;
     @include desktop {
         padding: 0;
     }
     &__image {
-        /* Comment Block - Image Element */
+        /* Comment Block - Image Container Element */
         display: flex;
         flex-direction: column;
         width: 45px;
@@ -37,11 +38,13 @@
         }
     }
     &__header {
+        /* Comment Block - Header Element */
         display: flex;
         flex-direction: row;
         width: 100%;
         padding-top: .75vh;
         &-name {
+            /* Comment Block - Header Name Element */
             @include mobile-h4-list-contact(600);
             width: 70%;
             @include tablet {
@@ -64,12 +67,16 @@
         /* Comment Block - Comments Element */
         position: relative;
         @include mobile-h4-list-contact(400);
-        width: 100%;
+        width: 112%;
         &-text {
+            /* Comment Block - Comments Text Element */
             width: 100%;
-            @include padding-tb(3%, 3%);
+            @include padding-tb(3%, 1%);
             @include tablet {
-                width: 100%;
+                @include padding-tb(1%, 1%);
+            }
+            @include desktop {
+                width: 90%;
             }
         }
     }
@@ -81,7 +88,7 @@
         margin-bottom: 2.25vh;
         margin-left: 6vw;
         @include tablet {
-            width: 100%;
+            width: 104%;
             margin-top: .5vh;
             margin-bottom: 1.25vh;
             margin-left: 28px;

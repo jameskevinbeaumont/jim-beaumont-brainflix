@@ -1,6 +1,7 @@
 @import "../../styles/styles.scss";
 
 .videodesc {
+    /* Video Description Block */
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -16,16 +17,18 @@
         width: 105%;
     }
     &__common {
+        /* Video Description Block - Common Element */
         color: $color-paragraph-text;
         width: 100%;
     }
     &__title {
+        /* Video Description Block - Title Element */
         @include mobile-h1;
         @extend .videodesc__common;
         @include padding-tb(3vh, 2vh);
         @include tablet {
             @include tablap-h1;
-            @include padding-tb(5vh, 3.5vh);
+            @include padding-tb(5vh, 1vh);
         }
         @include desktop {
             @include padding-tb(3vh, 1vh);
@@ -35,6 +38,7 @@
         }
     }
     &__header {
+        /* Video Description Block - Header Element */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -43,7 +47,8 @@
             flex-direction: row;
             justify-content: flex-end;
         }
-        &--left {
+        &-left {
+            /* Video Description Block - Left Container Element */
             display: flex;
             padding-left: 6%;
             height: 45px;
@@ -53,19 +58,22 @@
                 padding: 0;
             }
         }
-		&--right {
+		&-right {
+            /* Video Description Block - Right Container Element */
             display: flex;
             padding-left: 6%;
             height: 45px;
             width: 100vw;
             @include tablet {
-                justify-content: flex-end;
+                justify-content: center;
                 height: 37px;
+                width: 58vw;
                 padding: 0;
             }
 		}
     }
     &__author {
+        /* Video Description Block - Author Element */
         @include mobile-h4-list-contact(600);
         @extend .videodesc__common;
         width: fit-content;
@@ -75,14 +83,17 @@
         }
     }
     &__date {
+        /* Video Description Block - Date Element */
         @include mobile-h4-list-contact(400);
         color: $color-text-label-style;
         width: fit-content;
     }
     &__view-img {
+        /* Video Description Block - View Image Element */
         align-self: flex-start;
     }
     &__view-count {
+        /* Video Description Block - View Count Element */
         @include mobile-h4-list-contact;
         @extend .videodesc__common;
         @include padding-lr(2vw, 5vw);
@@ -95,9 +106,11 @@
         }
     }
     &__like-img {
+        /* Video Description Block - Like Image Element */
         align-self: flex-start;
     }
     &__like-count {
+        /* Video Description Block - Like Count Element */
         @include mobile-h4-list-contact;
         @extend .videodesc__common;
         padding-left: 2vw;
@@ -110,11 +123,9 @@
         }
     }
     &__divider {
+        /* Video Description Block - Divider Element */
         border-top: 1px solid $color-divider;
         width: 100%;
-        @include tablet {
-            width: 97%;
-        }
         @include desktop {
             width: 94%;
         }
@@ -129,11 +140,6 @@
     @include desktop {
         justify-content: flex-start;
         flex-direction: row;
-    }
-    &__common {
-        /* Videodesc Details Block - Common Element */
-        color: $color-paragraph-text;
-        width: 100%;        
     }
     &__paragraph {
         /* Videodesc Details Block - Paragraph Element */

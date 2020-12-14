@@ -1,3 +1,5 @@
+// Function - Gets the video data - presently hardcoded 
+//            via an object array
 export function GetVideoData () {
     return new Promise(function(resolve, reject) {
         const sideVideos = 
@@ -17,7 +19,7 @@ export function GetVideoData () {
             {
             id: 'video-2',
             title: 'Les Houches The Hidden Gem Of The Chamoix',
-            channel: 'Scotty Cranmmer',
+            channel: 'Scotty Cranmer',
             image: '../assets/images/video-list-2.jpg'
             },
             {
@@ -65,6 +67,7 @@ export function GetVideoData () {
     });
 }
 
+// Function - Initializes the main video object 
 export function InitializeMVO () {
     const mainVideo = 
     {
@@ -84,6 +87,9 @@ export function InitializeMVO () {
     return mainVideo;
 }
 
+// Function - Gets the main video object - presently hardcoded 
+//            via an object and the argument passed (firstVideo)
+//            is not used
 export function GetMainVideoObject (firstVideo) {
     return new Promise(function(resolve, reject) {
         // Would use firstVideo to GET video details from API...
@@ -111,6 +117,8 @@ export function GetMainVideoObject (firstVideo) {
     });
 }   
 
+// Function - Gets the comment data for a video. Presently this
+//            is hardcoded via an object array
 export function GetCommentData () {
     const comments = 
     [
@@ -146,7 +154,7 @@ export function GetCommentData () {
     return comments;
 }
 
-// Function - Generate timestamp
+// Function - Generate timestamp (Diving Deeper functionality)
 function generateTimeStamp (commentObjDate) {
     let currentDate = new Date();
     let commentDate = new Date(commentObjDate);

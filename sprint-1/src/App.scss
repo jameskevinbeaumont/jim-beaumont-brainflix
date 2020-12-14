@@ -1,18 +1,21 @@
 @import "./styles/styles.scss";
 
 .main {
+    /* Main Block */
     display: flex;
     flex-direction: column;
     @include desktop {
         flex-direction: row;
     }
-    &-left {
+    &__left {
+        /* Main Block  - Left Container Element */
         width: 100%;
         @include desktop {
             width: 60vw;
         }
     }
-    &-right {
+    &__right {
+        /* Main Block - Right Container Element */
         width: 100%;
         @include desktop {
             width: 40vw;

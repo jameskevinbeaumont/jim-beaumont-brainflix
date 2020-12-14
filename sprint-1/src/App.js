@@ -9,12 +9,19 @@ import CommentList from './components/CommentList/CommentList';
 import SideVideoList from './components/SideVideoList/SideVideoList';
 
 class App extends React.Component {
-  // State initialization
+  // *** State Initialization ***
+  // Need to initialize the mainvideo object because
+  // render is called BEFORE componentDidMount so 
+  // all components will fire and if there is an 
+  // undefined comments property in the mainvideo object
+  // the CommentList component will throw an error on map
   state = {
     videos: [],
     mainvideo: InitializeMVO() 
   };
 
+  // Initialization of data after components are 
+  // inserted into the DOM tree
   componentDidMount() {
     GetVideoData()
     .then(result => {
@@ -29,21 +36,18 @@ class App extends React.Component {
     .catch(err => console.log('Error=>', err.response));
   };
 
-  componentWillUnmount() {
-  };
-
   render() {
     return (
       <div>
         <Header />
         <MainVideo mainVideoObj={this.state.mainvideo}/>
         <main className="main">
-          <div className="main-left">
+          <div className="main__left">
             <VideoDesc mainVideoObj={this.state.mainvideo}/>
             <NewComment />
             <CommentList videoComments={this.state.mainvideo.comments}/>
           </div>
-          <div className="main-right">
+          <div className="main__right">
             <SideVideoList videoList={this.state.videos}/>
           </div>
         </main>

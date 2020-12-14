@@ -5,6 +5,7 @@ import Comment from '../Comment/Comment';
 export default function CommentList ({videoComments}) {
 
     return (
+        // Comment List/History Div
         <div className="comments__history" id="comments-container">
             {videoComments.map((comment, index) => 
             <Comment key={index} 

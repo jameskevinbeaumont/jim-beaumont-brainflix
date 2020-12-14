@@ -3,6 +3,7 @@ import './SideVideo.scss';
 
 export default function SideVideo ({id, title, channel, image}) {
     return (
+        // Side Video (Detail) Div
         <div className="sidevideo" id={id}>
             <div className="sidevideo__image">
                 <img className="sidevideo-image" src={image} alt=""/>

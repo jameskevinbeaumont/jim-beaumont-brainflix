@@ -1,6 +1,7 @@
 @import "../../styles/styles.scss";
 
 .newcomment {
+    /* New Comment Block */
     @include flex-center;
     flex-direction: column;
     @include padding-lr(5%, 5%);
@@ -11,29 +12,30 @@
         @include padding-lr(22.5%, 0);
     }
     &__title {
+        /* New Comment Block - Title */
         @include mobile-h4-list-contact(600);
         color: $color-paragraph-text;
         width: 100%;        
         @include padding-tb(3vh, 2vh);
         @include tablet {
             @include mobile-p;
-            @include padding-tb(2vh, 2.5vh);
+            @include padding-tb(3vh, 2.5vh);
         }
     }
     &__form {
-        /* Comments Block - Form Element */
+        /* New Comment Block - Form Element */
         display: flex;
         flex-direction: row;
         width: 100%;
         &-image {
-            /* Comments Block - Form Image Element */
+            /* New Comment Block - Form Image Element */
             display: flex;
             width: 45px;
             height: 45px;
             margin-top: 2.25vh;    
         }
         &-main {
-            /* Comments Block - Form Main Element */
+            /* New Comment Block - Form Main Element */
             display: flex;
             flex-direction: column;
             width: 84%;
@@ -43,7 +45,8 @@
             @include desktop {
                 width: 90%;
             }
-            &--left {
+            &-left {
+                /* New Comment Block - Form Left Container Element */
                 display: flex;
                 flex-direction: column;
                 width: 50vw;
@@ -51,7 +54,8 @@
                     width: 100%;
                 }
             }
-            &--right {
+            &-right {
+                /* New Comment Block - Form Right Container Element */
                 display: flex;
                 flex-direction: column;
                 width: 50vw;
@@ -61,10 +65,10 @@
             }
         }
         &-label {
-            /* Comments Block - Form Label Element */
+            /* New Comment Block - Form Label Element */
             @include mobile-h5-label($color-text-label-style);
             padding-left: 6%;
-            &--comment {
+            &-comment {
                 @extend .newcomment__form-label;
                 padding-left: 6%;
                 @include tablet {
@@ -73,7 +77,7 @@
             }
         }
         &-textarea {
-            /* Comments Block - Form Textarea Element */
+            /* New Comment Block - Form Textarea Element */
             font-family: $font-family;
             height: 110px;
             width: 71vw;
@@ -81,8 +85,8 @@
             border-radius: 4px;
             margin-left: 6%;
             margin-bottom: 2vh;
-            padding-left: 6%;
-            padding-top: 2.25vh;
+            padding-left: 9%;
+            padding-top: 1.75vh;
             outline: none;
             background-color: $color-text-field-bg-fill;
             &:focus {
@@ -95,14 +99,14 @@
                 height: 48px;
                 width: 440px;
                 margin-left: 3%;
-                padding-top: 1vh;
-                padding-left: 3%;
+                padding-left: 4%;
             }
             @include desktop {
                 width: 98%;
             }
         }
         &-button {
+            /* New Comment Block - Button Element */
             color: $color-text-offset;
             background-color: $color-primary-cta;
             align-self: flex-start;
@@ -126,7 +130,8 @@
             }
         }
     }
-    &-image {
+    &__image {
+        /* New Comment Block - Image Element */
         width: 100%;
         height: 100%;
         border-radius: 50%;

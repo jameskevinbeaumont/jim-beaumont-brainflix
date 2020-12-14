@@ -6,14 +6,15 @@ export default function VideoDesc ({mainVideoObj}) {
     const iconLikes = './assets/icons/Icon-likes.svg';
 
     return (
+    // Video Description section
     <section className="videodesc">
         <h2 className="videodesc__title">{mainVideoObj.title}</h2>
         <div className="videodesc__header">
-            <div className="videodesc__header--left">
+            <div className="videodesc__header-left">
                 <h4 className="videodesc__author">By {mainVideoObj.channel}</h4>
                 <h5 className="videodesc__date">{mainVideoObj.timestamp}</h5>
             </div>
-            <div className="videodesc__header--right">
+            <div className="videodesc__header-right">
                 <img className="videodesc__view-img" src={iconViews} alt="views icon" />
                 <h4 className="videodesc__view-count">{mainVideoObj.views}</h4>
                 <img className="videodesc__like-img" src={iconLikes} alt="likes icon" />

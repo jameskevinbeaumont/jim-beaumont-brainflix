@@ -4,6 +4,7 @@ import SideVideo from '../SideVideo/SideVideo';
 
 export default function SideVideoList ({videoList}) {
     return (
+        // Side Video List Section
         <section className="sidevideolist">
             <h2 className="sidevideolist-title">NEXT VIDEO</h2>
             {videoList.map((video, index) => 

@@ -3,6 +3,7 @@ import './Comment.scss';
 
 export default function Comment ({id, name, date, ts, text}) {
     return (
+        // Comment List/History Detail Div
         <>
         <hr className="comment__divider"></hr>
         <div className="comment" id={id}>

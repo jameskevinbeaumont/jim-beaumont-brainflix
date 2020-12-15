@@ -1,0 +1,115 @@
+@import "../../styles/styles.scss";
+
+.header {
+	/* Header Block */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+	height: 169px;
+	@include mob-tab-int {
+		height: 110px;
+	}
+	@include tablet {
+		flex-direction: row;
+		height: 80px;
+		@include padding-tb(16px, 16px);
+		@include padding-lr(3.125%, 3.125%);
+	}
+	@include desktop {
+		@include padding-lr(12.5%, 12.5%);
+	}
+	&__container-left {
+		/* Header Block - Container Left Element */
+		display: flex;
+		justify-content: center;
+		height: 48px;
+		width: 100vw;
+		@include tablet {
+			justify-content: flex-start;
+			width: 25vw;
+		}
+	}
+	&__container-right {
+		/* Header Block - Container Right Element */
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		height: 48px;
+		width: 100vw;
+		@include tablet {
+			justify-content: flex-end;
+			width: 75vw;
+		}
+	}
+	&__image-container {
+		/* Header Block - Image Container Element */
+		display: flex;
+		width: 45px;
+		height: 45px;
+		margin-top: .25vh;
+	}
+	&-image {
+		/* Header Block - Image Element */
+		width: 100%;
+		height: 100%;
+		border-radius: 50%; 
+		background-color: $color-text-label-style;	
+	}
+	&__logo {
+		/* Header Block - Logo Element */
+		width: 124px;
+		height: 48px;
+	}
+	&__search-container {
+		/* Header Block - Search Container Element */
+		position: relative;
+	}
+	&__search-icon {
+		/* Header Block - Search Icon Element */
+		position: absolute;
+		top: 16px;
+		left: 16px;
+	}
+	&__search {
+		/* Header Block - Search Element */
+		width: 288px;
+		height: 48px;
+		padding-left: 42px;
+		margin-bottom: 1.25vh;
+		border: 1px solid $color-text-label-style;
+		border-radius: 4px;
+		outline: none;
+		background-color: $color-text-field-bg-fill;
+		&:focus {
+			border: 2px solid $color-form-input-focus;
+		}
+		@include mob-tab-int {
+			width: 248px;
+			margin-right: 22px;
+		}
+	}
+	&__upload-button {
+		/* Header Block - Upload Button */
+		color: $color-text-offset;
+		background-color: $color-primary-cta;
+		height: 49px;
+		width: 228px;
+        background-image: url('../../assets/icons/Icon-upload.svg');
+        background-repeat: no-repeat;
+        background-position: 74px 16px;
+        text-align: left;
+        text-indent: 100px;
+		margin-right: 16px;
+		border: none;
+		border-radius: 4px;
+		&:hover {
+			background-color: $color-primary-cta-hover;
+		}
+		@include mob-tab-int {
+			background-position: 10px 16px;
+			text-indent: 32px;
+			width: 100px;
+			margin-right: 24px;
+		}
+	}
+}

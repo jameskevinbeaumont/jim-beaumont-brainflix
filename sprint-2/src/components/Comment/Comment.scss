@@ -1,0 +1,101 @@
+@import "../../styles/styles.scss";
+
+.comment {
+    /* Comment Block */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 4%;
+    @include desktop {
+        padding: 0;
+    }
+    &__image {
+        /* Comment Block - Image Container Element */
+        display: flex;
+        flex-direction: column;
+        width: 45px;
+        height: 45px;
+        margin-top: .5vh;
+    }
+    &-image {
+        /* Comment Block - Comment Image */
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        margin-left: 1px;
+        padding-left: 1px;
+        background-color: $color-text-label-style;
+    }
+    &__detail {
+        /* Comment Block - Detail Element */
+        display:flex;
+        flex-direction: column;
+        width: 82%;
+        padding-left: 5%;
+        @include desktop {
+            width: 90%;
+        }
+    }
+    &__header {
+        /* Comment Block - Header Element */
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-top: .75vh;
+        &-name {
+            /* Comment Block - Header Name Element */
+            @include mobile-h4-list-contact(600);
+            width: 70%;
+            @include tablet {
+                width: fit-content;
+            }
+        }
+        &-ts {
+            /* Comment Block - Header TS (Time Stamp) Element */
+            @include mobile-h4-list-contact(400);
+            width: 40%;
+            color: $color-text-label-style;
+            margin-right: -64px;
+            @include tablet {
+                width: fit-content;
+                padding-left: 2%;
+            }
+        }
+    }
+    &__comments {
+        /* Comment Block - Comments Element */
+        position: relative;
+        @include mobile-h4-list-contact(400);
+        width: 112%;
+        &-text {
+            /* Comment Block - Comments Text Element */
+            width: 100%;
+            @include padding-tb(3%, 1%);
+            @include tablet {
+                @include padding-tb(1%, 1%);
+            }
+            @include desktop {
+                width: 90%;
+            }
+        }
+    }
+    &__divider {
+        /* Comment Block - Divider Element */
+        border-top: 1px solid $color-divider;
+        width: 97%;
+        margin-top: 1.5vh;
+        margin-bottom: 2.25vh;
+        margin-left: 6vw;
+        @include tablet {
+            width: 104%;
+            margin-top: .5vh;
+            margin-bottom: 1.25vh;
+            margin-left: 28px;
+            }
+        @include desktop {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}

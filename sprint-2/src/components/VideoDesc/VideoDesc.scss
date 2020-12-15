@@ -1,0 +1,160 @@
+@import "../../styles/styles.scss";
+
+.videodesc {
+    /* Video Description Block */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include padding-lr(5%, 5%);
+    @include tablet {
+        @include padding-lr(3.125%, 3.125%);
+    }
+    @include desktop {
+        @include padding-lr(12.5%, 12.5%);
+        margin: 0;
+        padding-right: 0;
+        padding-left: 22.5%;
+        width: 105%;
+    }
+    &__common {
+        /* Video Description Block - Common Element */
+        color: $color-paragraph-text;
+        width: 100%;
+    }
+    &__title {
+        /* Video Description Block - Title Element */
+        @include mobile-h1;
+        @extend .videodesc__common;
+        @include padding-tb(3vh, 2vh);
+        @include tablet {
+            @include tablap-h1;
+            @include padding-tb(5vh, 1vh);
+        }
+        @include desktop {
+            @include padding-tb(3vh, 1vh);
+            padding-right: 0;
+            margin-right: 0;
+            width: 94%;
+        }
+    }
+    &__header {
+        /* Video Description Block - Header Element */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        &-left {
+            /* Video Description Block - Left Container Element */
+            display: flex;
+            padding-left: 6%;
+            height: 45px;
+            width: 100vw;
+            @include tablet {
+                height: 37px;
+                padding: 0;
+            }
+        }
+		&-right {
+            /* Video Description Block - Right Container Element */
+            display: flex;
+            padding-left: 6%;
+            height: 45px;
+            width: 100vw;
+            @include tablet {
+                justify-content: center;
+                height: 37px;
+                width: 58vw;
+                padding: 0;
+            }
+		}
+    }
+    &__author {
+        /* Video Description Block - Author Element */
+        @include mobile-h4-list-contact(600);
+        @extend .videodesc__common;
+        width: fit-content;
+        padding-right: 2vw;
+        @include desktop {
+            padding-right: .5vw;
+        }
+    }
+    &__date {
+        /* Video Description Block - Date Element */
+        @include mobile-h4-list-contact(400);
+        color: $color-text-label-style;
+        width: fit-content;
+    }
+    &__view-img {
+        /* Video Description Block - View Image Element */
+        align-self: flex-start;
+    }
+    &__view-count {
+        /* Video Description Block - View Count Element */
+        @include mobile-h4-list-contact;
+        @extend .videodesc__common;
+        @include padding-lr(2vw, 5vw);
+        width: fit-content;
+        @include tablet {
+            @include padding-lr(1vw, 3vw);
+        }
+        @include desktop {
+            @include padding-lr(1vw, 1.5vw);
+        }
+    }
+    &__like-img {
+        /* Video Description Block - Like Image Element */
+        align-self: flex-start;
+    }
+    &__like-count {
+        /* Video Description Block - Like Count Element */
+        @include mobile-h4-list-contact;
+        @extend .videodesc__common;
+        padding-left: 2vw;
+        width: fit-content;
+        @include tablet {
+            @include padding-lr(1vw, 3vw);
+        }
+        @include desktop {
+            @include padding-lr(1vw, 5vw);
+        }
+    }
+    &__divider {
+        /* Video Description Block - Divider Element */
+        border-top: 1px solid $color-divider;
+        width: 100%;
+        @include desktop {
+            width: 94%;
+        }
+    }
+}
+
+.videodesc-details {
+    /* Videodesc Details Block */
+    @include flex-center;
+    flex-direction: column;
+    padding-top: 16px;
+    @include desktop {
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+    &__paragraph {
+        /* Videodesc Details Block - Paragraph Element */
+        @include mobile-h5-label;
+        @include mobile-h4-list-contact;
+        padding-top: 1vh;    
+        @include tablet {
+            line-height: 22px;
+            width: 70%;
+            margin-right: 218px;
+            padding-bottom: 1.5vh;
+        }
+        @include desktop {
+            justify-content: flex-start;
+            margin: 0;
+         }
+    }
+}

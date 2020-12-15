@@ -10,6 +10,7 @@ export default function Header () {
     // Header section
     <header className="header">
         <div className="header__container-left">
+            <h1 className="header__h1">BrainFlix</h1>
             <img className="header__logo" src={logoPath} alt="brainflix logo"/>
         </div>
         <div className="header__container-right">

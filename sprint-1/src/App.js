@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import {GetVideoData, InitializeMVO, GetMainVideoObject} from './js/loadSampleData';
+import { GetVideoData, InitializeMVO, GetMainVideoObject } from './js/loadSampleData';
 import Header from './components/Header/Header';
 import MainVideo from './components/MainVideo/MainVideo';
 import VideoDesc from './components/VideoDesc/VideoDesc';
@@ -17,38 +17,38 @@ class App extends React.Component {
   // the CommentList component will throw an error on map
   state = {
     videos: [],
-    mainvideo: InitializeMVO() 
+    mainvideo: InitializeMVO()
   };
 
   // Initialization of data after components are 
   // inserted into the DOM tree
   componentDidMount() {
     GetVideoData()
-    .then(result => {
-      let firstVideo = result[0]
-      let sideVideos = result.splice(1, result.length - 1)
-      this.setState({videos: sideVideos})
-      return GetMainVideoObject(firstVideo)
-    })
-    .then(result => {
-     this.setState({mainvideo: result})
-    })
-    .catch(err => console.log('Error=>', err.response));
+      .then(result => {
+        let firstVideo = result[0]
+        let sideVideos = result.splice(1, result.length - 1)
+        this.setState({ videos: sideVideos })
+        return GetMainVideoObject(firstVideo)
+      })
+      .then(result => {
+        this.setState({ mainvideo: result })
+      })
+      .catch(err => console.log('Error =>', err.response));
   };
 
   render() {
     return (
       <div>
         <Header />
-        <MainVideo mainVideoObj={this.state.mainvideo}/>
+        <MainVideo mainVideoObj={this.state.mainvideo} />
         <main className="main">
           <div className="main__left">
-            <VideoDesc mainVideoObj={this.state.mainvideo}/>
+            <VideoDesc mainVideoObj={this.state.mainvideo} />
             <NewComment />
-            <CommentList videoComments={this.state.mainvideo.comments}/>
+            <CommentList videoComments={this.state.mainvideo.comments} />
           </div>
           <div className="main__right">
-            <SideVideoList videoList={this.state.videos}/>
+            <SideVideoList videoList={this.state.videos} />
           </div>
         </main>
       </div>

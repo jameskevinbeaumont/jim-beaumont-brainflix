@@ -8,12 +8,16 @@
     width: 100%;
     padding-bottom: 20px;
     @include tablet {
-        padding-left: 0;
+        @include padding-lr(0, 0);
         padding-bottom: 6px;
     }
     @include desktop {
         padding-left: 14px;
         padding-bottom: 10px;
+    }
+    &__routerlink {
+        color: $color-paragraph-text;
+        text-decoration: none; 
     }
     &__image {
         /* Side Video (Detail) Block - Image Container Element */
@@ -59,7 +63,7 @@
         /* Side Video (Detail) Block - Title Element */
         display: flex;
         flex-direction: row;
-        width: 160px;
+        width: 164px;
         padding-top: .75vh;
         &-text {
             /* Side Video (Detail) Block - Title Text Element */

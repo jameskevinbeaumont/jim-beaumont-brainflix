@@ -2,7 +2,8 @@
 
 .sidevideolist {
     /* Side Video List Block */
-    @include flex-center;
+    // @include flex-center;
+    display: flex;
     flex-direction: column;
     @include padding-lr(5%, 5%);
     font-family: $font-family;

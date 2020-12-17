@@ -1,64 +1,64 @@
 // Function - Gets the video data - presently hardcoded 
 //            via an object array
-export function GetVideoData () {
-    return new Promise(function(resolve, reject) {
-        const sideVideos = 
-        [
-            {
-            id: 'video-0',
-            title: 'BMX Rampage: 2018 Highlights',
-            channel: 'Red Cow',
-            image: '../../assets/images/video-list-0.jpg'
-            },
-            {
-            id: 'video-1',
-            title: 'Become A Travel Pro In One Easy Lesson',
-            channel: 'Scotty Cranmer',
-            image: './assets/images/video-list-1.jpg'
-            },
-            {
-            id: 'video-2',
-            title: 'Les Houches The Hidden Gem Of The Chamoix',
-            channel: 'Scotty Cranmer',
-            image: '../assets/images/video-list-2.jpg'
-            },
-            {
-            id: 'video-3',
-            title: 'Travel Health Useful Medical Information For',
-            channel: 'Scotty Cranmer',
-            image: '../../../assets/images/video-list-3.jpg'
-            },
-            {
-            id: 'video-4',
-            title: 'Cheap Airline Tickets Great Ways To Save',
-            channel: 'Emily Harper',
-            image: '../../assets/images/video-list-4.jpg'
-            },
-            {
-            id: 'video-5',
-            title: 'Take A Romantic Break In A Boutique Hotel',
-            channel: 'Ethan Owen',
-            image: '../../assets/images/video-list-5.jpg'
-            },
-            {
-            id: 'video-6',
-            title: 'Choose The Perfect Accomodations',
-            channel: 'Lydia Perez',
-            image: '../../assets/images/video-list-6.jpg'
-            },
-            {
-            id: 'video-7',
-            title: 'Cruising Destination Ideas',
-            channel: 'Timothy Austin',
-            image: '../../assets/images/video-list-7.jpg'
-            },
-            {
-            id: 'video-8',
-            title: 'Train Travel On Track For Safety',
-            channel: 'Scotty Cranmer',
-            image: '../../assets/images/video-list-8.jpg'
-            }
-        ]
+export function GetVideoData() {
+    return new Promise(function (resolve, reject) {
+        const sideVideos =
+            [
+                {
+                    id: 'video-0',
+                    title: 'BMX Rampage: 2018 Highlights',
+                    channel: 'Red Cow',
+                    image: '../../assets/images/video-list-0.jpg'
+                },
+                {
+                    id: 'video-1',
+                    title: 'Become A Travel Pro In One Easy Lesson',
+                    channel: 'Scotty Cranmer',
+                    image: './assets/images/video-list-1.jpg'
+                },
+                {
+                    id: 'video-2',
+                    title: 'Les Houches The Hidden Gem Of The Chamoix',
+                    channel: 'Scotty Cranmer',
+                    image: '../assets/images/video-list-2.jpg'
+                },
+                {
+                    id: 'video-3',
+                    title: 'Travel Health Useful Medical Information For',
+                    channel: 'Scotty Cranmer',
+                    image: '../../../assets/images/video-list-3.jpg'
+                },
+                {
+                    id: 'video-4',
+                    title: 'Cheap Airline Tickets Great Ways To Save',
+                    channel: 'Emily Harper',
+                    image: '../../assets/images/video-list-4.jpg'
+                },
+                {
+                    id: 'video-5',
+                    title: 'Take A Romantic Break In A Boutique Hotel',
+                    channel: 'Ethan Owen',
+                    image: '../../assets/images/video-list-5.jpg'
+                },
+                {
+                    id: 'video-6',
+                    title: 'Choose The Perfect Accomodations',
+                    channel: 'Lydia Perez',
+                    image: '../../assets/images/video-list-6.jpg'
+                },
+                {
+                    id: 'video-7',
+                    title: 'Cruising Destination Ideas',
+                    channel: 'Timothy Austin',
+                    image: '../../assets/images/video-list-7.jpg'
+                },
+                {
+                    id: 'video-8',
+                    title: 'Train Travel On Track For Safety',
+                    channel: 'Scotty Cranmer',
+                    image: '../../assets/images/video-list-8.jpg'
+                }
+            ]
         if (sideVideos && sideVideos.length > 0) {
             resolve(sideVideos);
         } else {
@@ -68,8 +68,8 @@ export function GetVideoData () {
 }
 
 // Function - Initializes the main video object 
-export function InitializeMVO () {
-    const mainVideo = 
+export function InitializeMVO() {
+    const mainVideo =
     {
         id: '',
         title: '',
@@ -90,11 +90,11 @@ export function InitializeMVO () {
 // Function - Gets the main video object - presently hardcoded 
 //            via an object and the argument passed (firstVideo)
 //            is not used
-export function GetMainVideoObject (firstVideo) {
-    return new Promise(function(resolve, reject) {
+export function GetMainVideoObject(firstVideo) {
+    return new Promise(function (resolve, reject) {
         // Would use firstVideo to GET video details from API...
- 
-        const mainVideo = 
+
+        const mainVideo =
         {
             id: 'video-0',
             title: 'BMX Rampage: 2018 Highlights',
@@ -115,37 +115,37 @@ export function GetMainVideoObject (firstVideo) {
             reject(Error("Error loading main video!"));
         };
     });
-}   
+}
 
 // Function - Gets the comment data for a video. Presently this
 //            is hardcoded via an object array
-export function GetCommentData () {
-    const comments = 
-    [
-        {
-        commentID: 1,
-        commentName: 'Michael Lyons',
-        commentDate: '11/17/2020 08:14:27',
-        commentTS: '',
-        commentText: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.'
-        },
-        {
-        commentID: 2,
-        commentName: 'Gary Wong',
-        commentDate: '05/12/2020 23:24:00',
-        commentTS: '',
-        commentText: 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'
-        },
-        {
-        commentID: 3,
-        commentName: 'Theodore Duncan',
-        commentDate: '08/15/2018 15:48:57',
-        commentTS: '',
-        commentText: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!'
-        }        
-    ]
+export function GetCommentData() {
+    const comments =
+        [
+            {
+                commentID: 1,
+                commentName: 'Michael Lyons',
+                commentDate: '11/17/2020 08:14:27',
+                commentTS: '',
+                commentText: 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.'
+            },
+            {
+                commentID: 2,
+                commentName: 'Gary Wong',
+                commentDate: '05/12/2020 23:24:00',
+                commentTS: '',
+                commentText: 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'
+            },
+            {
+                commentID: 3,
+                commentName: 'Theodore Duncan',
+                commentDate: '08/15/2018 15:48:57',
+                commentTS: '',
+                commentText: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!'
+            }
+        ]
 
-    comments.forEach(function(comment){
+    comments.forEach(function (comment) {
         let newDate = new Date(comment.commentDate);
         let newTime = newDate.getTime();
         comment.commentTS = generateTimeStamp(newTime);
@@ -155,7 +155,7 @@ export function GetCommentData () {
 }
 
 // Function - Generate timestamp (Diving Deeper functionality)
-function generateTimeStamp (commentObjDate) {
+export function generateTimeStamp(commentObjDate) {
     let currentDate = new Date();
     let commentDate = new Date(commentObjDate);
     let currentTime = Math.round(currentDate.getTime() / 1000);
@@ -168,7 +168,7 @@ function generateTimeStamp (commentObjDate) {
     let diffYears = parseInt(Math.round(diffMonths / 12));
     let tsText = '';
 
-    switch(true) {
+    switch (true) {
         case (diffMins < 1):
             tsText = '< 1 minute ago';
             break;

@@ -5,12 +5,10 @@
     @include flex-center;
     flex-direction: column;
     @include padding-lr(5%, 5%);
-    &__history {
-        /* Comments Block - History Element*/
-        width: 90vw;
-        @include desktop {
-            @include padding-lr(22.5%, 16.5%);
-            width: 70vw;
-        }
+    @include tablet {
+        @include padding-lr(3.125%, 3.125%);
+    }
+    @include desktop {
+        @include padding-lr(22.5%, 0);
     }
 }

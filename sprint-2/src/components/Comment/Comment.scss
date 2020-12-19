@@ -6,7 +6,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    padding-left: 4%;
+    margin-top: 2vh;
+    border-bottom: 2px solid $color-divider;
     @include desktop {
         padding: 0;
     }
@@ -33,6 +34,9 @@
         flex-direction: column;
         width: 82%;
         padding-left: 5%;
+        @include tablet {
+            width: 86%;
+        }
         @include desktop {
             width: 90%;
         }
@@ -46,7 +50,7 @@
         &-name {
             /* Comment Block - Header Name Element */
             @include mobile-h4-list-contact(600);
-            width: 70%;
+            width: 60%;
             @include tablet {
                 width: fit-content;
             }
@@ -67,16 +71,12 @@
         /* Comment Block - Comments Element */
         position: relative;
         @include mobile-h4-list-contact(400);
-        width: 112%;
         &-text {
             /* Comment Block - Comments Text Element */
-            width: 100%;
-            @include padding-tb(3%, 1%);
+            @include padding-tb(3%, 7%);
             @include tablet {
-                @include padding-tb(1%, 1%);
-            }
-            @include desktop {
-                width: 90%;
+                @include padding-tb(1%, 4%);
+                width: 100%;
             }
         }
     }

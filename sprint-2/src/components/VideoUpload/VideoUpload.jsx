@@ -6,9 +6,7 @@ export default function VideoUpload() {
     return (
         // Video Upload section
         <section className="videoupload">
-            <hr className="videoupload__divider-top"></hr>
             <h2 className="videoupload__title">Upload Video</h2>
-            <hr className="videoupload__divider-mid"></hr>
             <div className="videoupload__main">
                 <div className="videoupload__main-left">
                     <h3 className="videoupload__thumbnail-title">VIDEO THUMBNAIL</h3>
@@ -36,8 +34,6 @@ export default function VideoUpload() {
             <div className="videoupload__button-container">
                 <button className="videoupload__publish-btn" id="videoupload__publish-btn">PUBLISH</button>
                 <button className="videoupload__cancel-btn" id="videoupload__cancel-btn">CANCEL</button>
-                {/* type="submit" name="videoupload__form-cancel-btn"
-                        value="CANCEL" formNoValidate></input> */}
             </div>
         </section>
     );

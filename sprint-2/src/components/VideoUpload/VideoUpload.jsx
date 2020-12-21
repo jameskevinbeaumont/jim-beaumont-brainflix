@@ -3,6 +3,7 @@ import './VideoUpload.scss';
 
 export default function VideoUpload() {
     let imagePath = '../../assets/images/Upload-video-preview.jpg';
+
     return (
         // Video Upload section
         <section className="videoupload">
@@ -30,7 +31,6 @@ export default function VideoUpload() {
                     </form>
                 </div>
             </div>
-            <hr className="videoupload__divider-bottom"></hr>
             <div className="videoupload__button-container">
                 <button className="videoupload__publish-btn" id="videoupload__publish-btn">PUBLISH</button>
                 <button className="videoupload__cancel-btn" id="videoupload__cancel-btn">CANCEL</button>

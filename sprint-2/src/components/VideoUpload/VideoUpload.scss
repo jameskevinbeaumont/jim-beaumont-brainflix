@@ -13,6 +13,7 @@
         @include padding-lr(12.5%, 12.5%);
     }
     &__title {
+        /* Video Upload Block - Title Element */
         @include mobile-h1;
         @include padding-tb(3vh, 2vh);
         @include mob-tab-int {
@@ -172,31 +173,17 @@
             }
         }
     }
-    &__divider-bottom {
-        display: none;
-        @include mob-tab-int {
-            display: block;
-            border: 1px solid $color-divider;
-            width: 100%;
-            margin-top: 1vh;
-            margin-bottom: 3vh;
-        }
-        @include tablet {
-            width: 100%;
-            margin-bottom: 4vh;
-        }
-        @include desktop {
-            display: block;
-            margin-top: 0;
-            margin-bottom: 3vh;
-        }
-    }
     &__button-container {
         display: flex;
         flex-direction: column;
         width: 100%;
         @include mob-tab-int {
             flex-direction: row-reverse;
+            border-top: 2px solid $color-divider;
+            padding-top: 4vh;
+        }
+        @include desktop {
+            padding-top: 3vh;
         }
     }
     &__publish-btn {

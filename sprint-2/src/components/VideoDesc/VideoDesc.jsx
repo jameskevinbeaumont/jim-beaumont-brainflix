@@ -22,7 +22,6 @@ export default function VideoDesc({ videoObj }) {
                     <h4 className="videodesc__like-count">{videoObj.likes}</h4>
                 </div>
             </div>
-            {/* <hr className="videodesc__divider"></hr> */}
             <div className="videodesc-details">
                 <h4 className="videodesc-details__paragraph">{videoObj.description}</h4>
             </div>

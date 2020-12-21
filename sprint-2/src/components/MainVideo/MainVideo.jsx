@@ -5,7 +5,6 @@ export default function MainVideo({ videoObj }) {
     const iconPlay = './assets/icons/Icon-play.svg';
     const iconFullScreen = './assets/icons/Icon-fullscreen.svg';
     const iconVolume = './assets/icons/Icon-volume.svg';
-    // console.log('MainVideo.jsx: videoObj', videoObj);
 
     return (
         // Main video section

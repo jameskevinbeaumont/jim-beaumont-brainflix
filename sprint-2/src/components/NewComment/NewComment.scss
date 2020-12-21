@@ -68,10 +68,12 @@
         &-label {
             /* New Comment Block - Form Label Element */
             @include mobile-h5-label($color-text-label-style);
+            width: 165px;
             padding-left: 6%;
             &-comment {
                 @extend .newcomment__form-label;
                 padding-left: 6%;
+                margin-left: 4%;
                 @include tablet {
                     padding-left: 3%;
                 }
@@ -91,7 +93,7 @@
             outline: none;
             background-color: $color-text-field-bg-fill;
             &:focus {
-                border: 2px solid $color-form-input-focus;
+                border: 2px solid $color-primary-cta;
             }
             &::placeholder {
                 color: $color-form-input-focus;
@@ -119,6 +121,9 @@
             border-radius: 4px;
             &:hover {
                 background-color: $color-primary-cta-hover;
+            }
+            &:disabled {
+                color: $color-text-label-style;
             }
             @include tablet {
                 width: 160px;

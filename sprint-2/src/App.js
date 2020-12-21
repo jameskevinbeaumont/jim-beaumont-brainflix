@@ -13,12 +13,8 @@ class App extends React.Component {
         <BrowserRouter>
           <Header />
           <Switch>
-            {/* {console.log('checking path /')} */}
-            {/* <Route path="/" exact component={Home} /> */}
             <Route path="/" exact render={(routerProps) => (<Home {...routerProps} />)} />
-            {/* {console.log('checking path /videoupload')} */}
             <Route path="/videoupload" component={VideoUpload} />
-            {/* {console.log('checking path /:id')} */}
             <Route path="/:id" render={(routerProps) => (<Home {...routerProps} />)} />
           </Switch>
         </BrowserRouter>

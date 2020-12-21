@@ -4,7 +4,6 @@ import './SideVideo.scss';
 
 export default function SideVideo({ id, title, channel, image }) {
     const linkPath = `/${id}`;
-    // console.log(linkPath);
 
     return (
         // Side Video (Detail) Div

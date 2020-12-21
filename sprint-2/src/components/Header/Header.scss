@@ -1,8 +1,10 @@
 @import "../../styles/styles.scss";
 
 .header {
+	/* Header Block */
 	border-bottom: 1px solid $color-divider;
 	&__container {
+		/* Header Block - Container Element */
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -66,18 +68,15 @@
 		/* Header Block - Search Container Element */
 		position: relative;
 	}
-	&__search-icon {
-		/* Header Block - Search Icon Element */
-		position: absolute;
-		top: 16px;
-		left: 16px;
-	}
 	&__search {
 		/* Header Block - Search Element */
 		font-family: $font-family;
-		width: 288px;
 		height: 48px;
-		padding-left: 42px;
+		width: 288px;
+        background-image: url('../../assets/icons/Icon-search.svg');
+        background-repeat: no-repeat;
+        background-position: 16px 15px;
+		padding-left: 40px;
 		margin-bottom: 1.25vh;
 		border: 1px solid $color-text-label-style;
 		border-radius: 4px;

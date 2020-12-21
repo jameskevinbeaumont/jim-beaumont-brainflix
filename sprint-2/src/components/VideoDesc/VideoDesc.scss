@@ -124,14 +124,6 @@
             @include padding-lr(1vw, 2vw);
         }
     }
-    &__divider {
-        /* Video Description Block - Divider Element */
-        border-top: 1px solid $color-divider;
-        width: 100%;
-        @include desktop {
-            width: 94%;
-        }
-    }
 }
 
 .videodesc-details {

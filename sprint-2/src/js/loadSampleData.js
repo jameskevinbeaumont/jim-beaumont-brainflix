@@ -1,4 +1,4 @@
-// Function - Initializes the active video detail object 
+// Function - Initializing the active video detail object 
 export function InitializeAVD() {
     const activeVideoDetail =
     {
@@ -18,7 +18,24 @@ export function InitializeAVD() {
     return activeVideoDetail;
 }
 
-// Function - Generate timestamp (Diving Deeper functionality)
+// Function - Order comments newest to oldest (Diving Deeper)
+export function orderComments(videoDetail) {
+    let currentCommentsList = videoDetail.comments;
+    let newCommentsList = [];
+
+    if (currentCommentsList.length > 3) {
+        newCommentsList = currentCommentsList.slice(3).reverse()
+        currentCommentsList.splice(3, currentCommentsList.length - 3)
+        newCommentsList = newCommentsList.concat(currentCommentsList);
+    } else {
+        newCommentsList = currentCommentsList;
+    }
+
+    videoDetail.comments = newCommentsList;
+    return videoDetail;
+}
+
+// Function - Generate timestamp (Diving Deeper)
 export function generateTimeStamp(commentObjDate) {
     let currentDate = new Date();
     let commentDate = new Date(commentObjDate);

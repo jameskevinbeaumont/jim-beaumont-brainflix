@@ -3,17 +3,27 @@ import axios from 'axios';
 import './NewComment.scss';
 
 export class NewComment extends Component {
+    // _isMounted flag used to avoid getting the warning
+    // of attempting to call setState() after a component
+    // has unmounted
     _isMounted = false;
 
+    // Defining state variables
     state = {
         comment: '',
         commentBtnEnabled: false
     };
 
+    // Lifecycle method allowing code to execute after component is 
+    // already placed in the DOM, after the component is rendered 
     componentDidMount() {
         this._isMounted = true;
     };
 
+    // Lifecycle method called when state changes - using to
+    // get check the status of the comment state to determine if
+    // it is populated or not to ensure the COMMENT button is 
+    // enabled or disabled
     componentDidUpdate() {
         if (this.state.comment !== '' && !this.state.commentBtnEnabled) {
             this.setState({ commentBtnEnabled: true });
@@ -22,12 +32,14 @@ export class NewComment extends Component {
         }
     };
 
+    // onChange event - comment
     updateComment = event => {
         this.setState({
             comment: event.target.value
         }, this.checkCommentBtnEnabled());
     };
 
+    // Check if the COMMENT button should be enabled
     checkCommentBtnEnabled = () => {
         let isEnabled = false;
 
@@ -39,6 +51,7 @@ export class NewComment extends Component {
         });
     };
 
+    // onClick event for the COMMENT button
     commentBtnClick = () => {
         if (this.state.comment.replace(/\s/g, '') === '') {
             alert('Please enter a comment!');
@@ -47,12 +60,12 @@ export class NewComment extends Component {
             });
             return;
         };
-
+        // Save the new comment
         let newComment = {
             name: 'Jim Beaumont',
             comment: this.state.comment
         };
-
+        // Perform an axios POST of the new comment
         axios.post(`${window.$BF_URL}${window.$BF_VIDEOS}${this.props.videoID}/${window.$BF_COMMENTS}${window.$BF_API_KEY}`, {
             name: newComment.name,
             comment: newComment.comment
@@ -65,6 +78,7 @@ export class NewComment extends Component {
             .catch(err => console.log('Error=>', err.response));
     };
 
+    // Lifecycle method called when the component will unmount
     componentWillUnmount() {
         this._isMounted = false;
     };

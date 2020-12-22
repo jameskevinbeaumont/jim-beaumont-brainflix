@@ -8,6 +8,8 @@ import VideoUpload from "./components/VideoUpload/VideoUpload";
 class App extends React.Component {
 
   render() {
+    // Router page information for both the main video page and
+    // the video upload page
     return (
       <div>
         <BrowserRouter>

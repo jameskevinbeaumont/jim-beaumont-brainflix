@@ -9,8 +9,12 @@ import CommentList from '../CommentList/CommentList';
 import SideVideoList from '../SideVideoList/SideVideoList';
 
 class Home extends React.Component {
+    // _isMounted flag used to avoid getting the warning
+    // of attempting to call setState() after a component
+    // has unmounted
     _isMounted = false;
 
+    // Defining state variables
     state = {
         videos: [],
         activeVideo: { id: '', title: '', channel: '', image: '' },
@@ -18,6 +22,8 @@ class Home extends React.Component {
         refreshWithID: false
     };
 
+    // Lifecycle method allowing code to execute after component is 
+    // already placed in the DOM, after the component is rendered 
     componentDidMount() {
         this._isMounted = true;
         const rprops = this.props;
@@ -25,7 +31,8 @@ class Home extends React.Component {
         if (rprops.match.params.id) {
             this.setState({ refreshWithID: true });
         }
-
+        // Axios GET to obtain the video list based on no ID passed
+        // (default) or based on specific video ID passed
         axios.get(window.$BF_URL + window.$BF_VIDEOS + window.$BF_API_KEY)
             .then(result => {
                 let firstVideo = {}
@@ -46,6 +53,8 @@ class Home extends React.Component {
                 }
 
                 this.setState({ videos: sideVideos })
+                // Axios GET to obtain detailed video data based on
+                // the video displayed in the main player
                 axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${firstVideo.id}${window.$BF_API_KEY}`)
                     .then(result => {
                         this.setState({ activeVideoDetail: orderComments(result.data) })
@@ -57,6 +66,9 @@ class Home extends React.Component {
             .catch(err => console.log('Error=>', err.response));
     };
 
+    // Lifecycle method called when state changes - using to
+    // get new video detail for the main video player if the user
+    // selects a video from the side video list
     componentDidUpdate() {
         if (this.state.refreshWithID) return;
 
@@ -87,7 +99,10 @@ class Home extends React.Component {
                 .catch(err => console.log('Error=>', err.response))
         }
     };
-
+    // Function passed to NewComment component used to indicate
+    // if a new comment has been added - if so, we need to get the
+    // updated video detail and re-order the comments from newest
+    // to oldest
     updateNewComment = () => {
         axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${this.state.activeVideo.id}${window.$BF_API_KEY}`)
             .then(result => {
@@ -96,12 +111,13 @@ class Home extends React.Component {
             .catch(err => console.log('Error=>', err.response))
     };
 
+    // Lifecycle method called when the component will unmount
     componentWillUnmount() {
         this._isMounted = false;
     };
 
     render() {
-
+        // Build the main video page
         return (
             <div>
                 <MainVideo videoObj={this.state.activeVideoDetail} />

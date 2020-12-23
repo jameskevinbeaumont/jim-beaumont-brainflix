@@ -37,6 +37,7 @@ class App extends React.Component {
   };
 
   render() {
+    // Building the main (primary) page
     return (
       <div>
         <Header />

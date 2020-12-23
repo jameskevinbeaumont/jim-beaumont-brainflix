@@ -59,6 +59,10 @@
 		border-radius: 50%; 
 		background-color: $color-text-label-style;	
 	}
+	&-title {
+		/* Header Block - Title Element */
+		display: none;
+	}
 	&__logo {
 		/* Header Block - Logo Element */
 		width: 124px;

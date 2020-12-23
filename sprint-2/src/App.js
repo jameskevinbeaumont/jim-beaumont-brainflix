@@ -9,7 +9,7 @@ class App extends React.Component {
 
   render() {
     // Router page information for both the main video page and
-    // the video upload page
+    // for the sprint2 new video upload page
     return (
       <div>
         <BrowserRouter>

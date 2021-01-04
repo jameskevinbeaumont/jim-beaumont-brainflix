@@ -1,0 +1,17 @@
+@import "./partials/typography";
+@import "./partials/variables";
+@import "./partials/mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    width: 100%;
+}
+.main {
+    background-color: $color-background;
+}

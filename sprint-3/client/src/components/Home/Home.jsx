@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './Home.scss';
-import { InitializeAVD, orderComments } from '../../js/loadSampleData';
+import { InitializeAVD, orderComments } from '../../js/util';
 import MainVideo from '../MainVideo/MainVideo';
 import VideoDesc from '../VideoDesc/VideoDesc';
 import NewComment from '../NewComment/NewComment';
@@ -25,6 +25,7 @@ class Home extends React.Component {
     // Lifecycle method allowing code to execute after component is 
     // already placed in the DOM, after the component is rendered 
     componentDidMount() {
+        // console.log('Home - componentDidMount');
         this._isMounted = true;
         const rprops = this.props;
 
@@ -33,7 +34,6 @@ class Home extends React.Component {
         }
         // Axios GET to obtain the video list based on no ID passed
         // (default) or based on specific video ID passed
-        // axios.get(window.$BF_URL + window.$BF_VIDEOS + window.$BF_API_KEY)
         axios.get(window.$BF_URL + window.$BF_VIDEOS)
             .then(result => {
                 let firstVideo = {}
@@ -52,11 +52,10 @@ class Home extends React.Component {
                     firstVideo = result.data[arrIndex]
                     sideVideos = result.data.filter(video => video.id !== rprops.match.params.id)
                 }
-
+                // console.log('Home - state -> videos being set');
                 this.setState({ videos: sideVideos })
                 // Axios GET to obtain detailed video data based on
                 // the video displayed in the main player
-                // axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${firstVideo.id}${window.$BF_API_KEY}`)
                 axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${firstVideo.id}`)
                     .then(result => {
                         this.setState({ activeVideoDetail: orderComments(result.data) })
@@ -72,6 +71,7 @@ class Home extends React.Component {
     // get new video detail for the main video player if the user
     // selects a video from the side video list
     componentDidUpdate() {
+        // console.log('Home - componentDidUpdate');
         if (this.state.refreshWithID) return;
 
         const rprops = this.props;
@@ -92,7 +92,6 @@ class Home extends React.Component {
             let newVideos =
                 this.state.videos.filter(video => video.id !== rprops.match.params.id);
             newVideos.push(this.state.activeVideo);
-            // axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${video.id}${window.$BF_API_KEY}`)
             axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${video.id}`)
                 .then(result => {
                     this.setState({ activeVideoDetail: orderComments(result.data) })
@@ -107,7 +106,7 @@ class Home extends React.Component {
     // updated video detail and re-order the comments from newest
     // to oldest
     updateNewComment = () => {
-        // axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${this.state.activeVideo.id}${window.$BF_API_KEY}`)
+        // console.log('Home - updateNewComment');
         axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${this.state.activeVideo.id}`)
             .then(result => {
                 this.setState({ activeVideoDetail: orderComments(result.data) })
@@ -117,6 +116,7 @@ class Home extends React.Component {
 
     // Lifecycle method called when the component will unmount
     componentWillUnmount() {
+        // console.log('Home - componentWillUnmount');
         this._isMounted = false;
     };
 

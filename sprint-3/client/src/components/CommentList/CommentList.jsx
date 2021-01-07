@@ -1,7 +1,7 @@
 import React from 'react';
 import './CommentList.scss';
 import Comment from '../Comment/Comment';
-import { generateTimeStamp } from '../../js/loadSampleData';
+import { generateTimeStamp } from '../../js/util';
 
 
 export default function CommentList({ videoComments }) {

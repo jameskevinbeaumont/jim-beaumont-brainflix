@@ -1,6 +1,6 @@
 import React from 'react';
 import './VideoDesc.scss';
-import { generateTimeStamp } from '../../js/loadSampleData';
+import { generateTimeStamp } from '../../js/util';
 
 export default function VideoDesc({ videoObj }) {
     const iconViews = './assets/icons/Icon-views.svg';

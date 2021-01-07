@@ -1,0 +1,234 @@
+[33mcommit 0cad2c4c2c4dcc810a754f5feb0d83acd4520bcc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Jim Beaumont <jameskevinbeaumont@gmail.com>
+Date:   Thu Jan 7 08:35:31 2021 -0500
+
+    Added new Axios calls to my local API and form changes on videoupload
+
+[33mcommit a7dc5ae3902f44e3eb7a767ff8a6ae11bbf89bc2[m
+Merge: a99ea823 aef33b0f
+Author: Jim Beaumont <jameskevinbeaumont@gmail.com>
+Date:   Wed Jan 6 13:42:38 2021 -0500
+
+    Merge branch 'main' of https://github.com/jameskevinbeaumont/jim-beaumont-brainflix into main
+
+[33mcommit a99ea8237409610243efaa99320f511e307046f9[m
+Author: Jim Beaumont <jameskevinbeaumont@gmail.com>
+Date:   Wed Jan 6 13:36:27 2021 -0500
+
+    Working on server for Express API
+
+[33mcommit aef33b0f7d33a493fed2fd5fdf5cd4784430449c[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:26:05 2021 -0500
+
+    Delete Icon-fullscreen.png
+
+[33mcommit a294ab0439b1614ddd4344d6bc2f87d52990ca98[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:59 2021 -0500
+
+    Delete Icon-fullscreen.svg
+
+[33mcommit daf8713a8f2063415d0469714194db77707f6f9b[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:52 2021 -0500
+
+    Delete Icon-likes.png
+
+[33mcommit 3e13ac0a2bf9b7cd4dd85358f92be6fc8a817c33[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:46 2021 -0500
+
+    Delete Icon-likes.svg
+
+[33mcommit 55a53991511fd727c588f4f3f7fff0db9a057754[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:40 2021 -0500
+
+    Delete Icon-pause.png
+
+[33mcommit b07e9b95640bead506e4dbfb705d2da5e31a39f2[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:34 2021 -0500
+
+    Delete Icon-pause.svg
+
+[33mcommit 0015fe27cec2b9b11c38a459828bf404100c4f9c[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:28 2021 -0500
+
+    Delete Icon-play.png
+
+[33mcommit 7d862715b3d29aac9f2a56a8c70a3ae4ba12eaf6[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:22 2021 -0500
+
+    Delete Icon-play.svg
+
+[33mcommit c010d0aefe19e0c4621bba3d9a67064f1fc287cb[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:15 2021 -0500
+
+    Delete Icon-scrubber-control.png
+
+[33mcommit 1e3813ec14b4509856ede841a54ee387fd01750d[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:09 2021 -0500
+
+    Delete Icon-scrubber-control.svg
+
+[33mcommit 926e191ef0278bc9cb214d8c1763a0d8fa4398c1[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:25:03 2021 -0500
+
+    Delete Icon-search.png
+
+[33mcommit 7686456c89d77236bccb56590d36977c84cf39fb[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:24:56 2021 -0500
+
+    Delete Icon-search.svg
+
+[33mcommit 7e4f068b9a1078c2293147b0e10a3cc7bc997f4b[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:24:51 2021 -0500
+
+    Delete Icon-upload.png
+
+[33mcommit b46af76aec8631382acf67d57936c9546f6f02bd[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:24:45 2021 -0500
+
+    Delete Icon-upload.svg
+
+[33mcommit 33c0a7a3d183e100cb5a1b2fdfe5176d7cbad681[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:24:39 2021 -0500
+
+    Delete Icon-views.png
+
+[33mcommit 5f5e76da6f3e767ab414a6694c7d9bb72e08e62f[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:24:31 2021 -0500
+
+    Delete Icon-views.svg
+
+[33mcommit ab01b154c3b01caf904ce90575e40fee1233cf1f[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:24:23 2021 -0500
+
+    Delete Icon-volume.png
+
+[33mcommit 5053805f8e442494f52a860450dd80ab885abc11[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:24:15 2021 -0500
+
+    Delete Icon-volume.svg
+
+[33mcommit 2aec15bc6c88ee48f53bfe3ced49746193e8d23c[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:24:06 2021 -0500
+
+    Delete Mohan-muruge-sq.jpg
+
+[33mcommit 7e42736d43b21f1b6ead5c297d6d8f2127e96de9[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:23:58 2021 -0500
+
+    Delete Mohan-muruge.jpg
+
+[33mcommit 58c4370e2d127deab96b92503ddba0d6a0556c8f[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:23:51 2021 -0500
+
+    Delete Upload-video-preview.jpg
+
+[33mcommit 17b778012690be8a25bb5bd1e124dd00ecda0652[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:23:44 2021 -0500
+
+    Delete video-list-0.jpg
+
+[33mcommit 0a9416b3d89138630133155e9c7656d378ff15a0[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:23:38 2021 -0500
+
+    Delete video-list-1.jpg
+
+[33mcommit f486ebb16d16eba5d0deb76986100f02fde5bb43[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:23:32 2021 -0500
+
+    Delete video-list-2.jpg
+
+[33mcommit 2e266e864f1a424643c5e0d2976934530a8b191b[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:23:25 2021 -0500
+
+    Delete video-list-3.jpg
+
+[33mcommit 27573e10e0509f0b49ad93377c023d7ce489a474[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:23:19 2021 -0500
+
+    Delete video-list-4.jpg
+
+[33mcommit 7ea7cb869dd5f37e32d616565e28c8195cce0686[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:23:12 2021 -0500
+
+    Delete video-list-5.jpg
+
+[33mcommit b289fa7b31819e1ec630b880c9b4161d76dbfe82[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:23:05 2021 -0500
+
+    Delete video-list-6.jpg
+
+[33mcommit d0610a6f2492d89bbf5cfc27e172c6674e490c13[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:22:58 2021 -0500
+
+    Delete video-list-7.jpg
+
+[33mcommit 7d968cf7dfaebd04aaa77bfd6531c2bf8d189f56[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:22:52 2021 -0500
+
+    Delete video-list-8.jpg
+
+[33mcommit 38fcced20c03772f90ed3f607f4af445eede9243[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:22:44 2021 -0500
+
+    Delete Logo-brainflix.png
+
+[33mcommit a7c2fb5e9460faa7650f018a89d4d6740339a032[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:22:37 2021 -0500
+
+    Delete Logo-brainflix.svg
+
+[33mcommit b5f5f523ca21133d1f1a00755bd37e9e2338a6cc[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:22:28 2021 -0500
+
+    Delete BrainStation Sample Video.mp4
+
+[33mcommit a24bcf1783d18eab8eee4e0340044e2a49b368ed[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:22:19 2021 -0500
+
+    Delete index.html
+
+[33mcommit 2390f8112a4d5fb4d09264b78f4ffeab7d5004b3[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:22:13 2021 -0500
+
+    Delete robots.txt
+
+[33mcommit 8cccb3de19a0dbd07aa5d213d969a059dfc9fca7[m
+Author: jameskevinbeaumont <72036427+jameskevinbeaumont@users.noreply.github.com>
+Date:   Mon Jan 4 18:22:05 2021 -0500
+
+    Delete Linotype-AvenirNe

@@ -69,7 +69,7 @@
         border-radius: 4px;
         background-repeat: no-repeat;
         background-size: cover;
-        margin-bottom: 4vh;
+        margin-bottom: 2vh;
         @include tablet {
             height: 25vw;
             width: 50%;
@@ -87,6 +87,15 @@
             @include tablet {
                 @include padding-tb(4.5vh, 0);
             }
+        }
+        &-upload-title {
+            @include mobile-h5-label($color-text-label-style);
+            font-weight: 500;
+            width: 100%;        
+        }
+        &-upload {
+            font-family: $font-family;
+            padding-bottom: 1rem;
         }
     }
     &__form {

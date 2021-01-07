@@ -33,7 +33,8 @@ class Home extends React.Component {
         }
         // Axios GET to obtain the video list based on no ID passed
         // (default) or based on specific video ID passed
-        axios.get(window.$BF_URL + window.$BF_VIDEOS + window.$BF_API_KEY)
+        // axios.get(window.$BF_URL + window.$BF_VIDEOS + window.$BF_API_KEY)
+        axios.get(window.$BF_URL + window.$BF_VIDEOS)
             .then(result => {
                 let firstVideo = {}
                 let sideVideos = []
@@ -55,7 +56,8 @@ class Home extends React.Component {
                 this.setState({ videos: sideVideos })
                 // Axios GET to obtain detailed video data based on
                 // the video displayed in the main player
-                axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${firstVideo.id}${window.$BF_API_KEY}`)
+                // axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${firstVideo.id}${window.$BF_API_KEY}`)
+                axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${firstVideo.id}`)
                     .then(result => {
                         this.setState({ activeVideoDetail: orderComments(result.data) })
                         this.setState({ activeVideo: firstVideo })
@@ -90,7 +92,8 @@ class Home extends React.Component {
             let newVideos =
                 this.state.videos.filter(video => video.id !== rprops.match.params.id);
             newVideos.push(this.state.activeVideo);
-            axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${video.id}${window.$BF_API_KEY}`)
+            // axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${video.id}${window.$BF_API_KEY}`)
+            axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${video.id}`)
                 .then(result => {
                     this.setState({ activeVideoDetail: orderComments(result.data) })
                     this.setState({ activeVideo: newActiveVideo })
@@ -104,7 +107,8 @@ class Home extends React.Component {
     // updated video detail and re-order the comments from newest
     // to oldest
     updateNewComment = () => {
-        axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${this.state.activeVideo.id}${window.$BF_API_KEY}`)
+        // axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${this.state.activeVideo.id}${window.$BF_API_KEY}`)
+        axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${this.state.activeVideo.id}`)
             .then(result => {
                 this.setState({ activeVideoDetail: orderComments(result.data) })
             })

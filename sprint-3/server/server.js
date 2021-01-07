@@ -19,15 +19,6 @@ app.use((_req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
-    //Checking a content-type header in the request so we can handle JSON without errors from req.body
-    if (req.method === 'POST' && req.headers['content-type'] !== 'application/json') {
-        res.status(400).send('Server requires application/json');
-    } else {
-        next();
-    };
-});
-
 const videosRoutes = require('./routes/videosRoutes');
 
 app.use('/videos', videosRoutes);

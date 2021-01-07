@@ -6,7 +6,6 @@ import Home from './components/Home/Home';
 import VideoUpload from "./components/VideoUpload/VideoUpload";
 
 class App extends React.Component {
-
   render() {
     return (
       <div>
@@ -15,6 +14,7 @@ class App extends React.Component {
           <Switch>
             <Route path="/" exact render={(routerProps) => (<Home {...routerProps} />)} />
             <Route path="/videoupload" component={VideoUpload} />
+            {/* <Route path="/videoupload" render={(routerProps) => (<VideoUpload {...routerProps} />)} /> */}
             <Route path="/:id" render={(routerProps) => (<Home {...routerProps} />)} />
           </Switch>
         </BrowserRouter>

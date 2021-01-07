@@ -66,7 +66,8 @@ export class NewComment extends Component {
             comment: this.state.comment
         };
         // Perform an axios POST of the new comment
-        axios.post(`${window.$BF_URL}${window.$BF_VIDEOS}${this.props.videoID}/${window.$BF_COMMENTS}${window.$BF_API_KEY}`, {
+        // axios.post(`${window.$BF_URL}${window.$BF_VIDEOS}${this.props.videoID}/${window.$BF_COMMENTS}${window.$BF_API_KEY}`, {
+        axios.post(`${window.$BF_URL}${window.$BF_VIDEOS}${this.props.videoID}/${window.$BF_COMMENTS}`, {
             name: newComment.name,
             comment: newComment.comment
         })
@@ -115,4 +116,4 @@ export class NewComment extends Component {
     };
 };
 
-export default NewComment
+export default NewComment;

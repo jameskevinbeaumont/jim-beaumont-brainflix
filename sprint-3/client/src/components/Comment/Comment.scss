@@ -72,13 +72,18 @@
     &__comments {
         /* Comment Block - Comments Element */
         position: relative;
+        width: 100%;
         @include mobile-h4-list-contact(400);
         &-text {
             /* Comment Block - Comments Text Element */
+            width: 72vw;
             @include padding-tb(3%, 7%);
             @include tablet {
                 @include padding-tb(1%, 4%);
-                width: 100%;
+                width: 83vw;
+            }
+            @include desktop {
+                width: 40vw;
             }
         }
     }

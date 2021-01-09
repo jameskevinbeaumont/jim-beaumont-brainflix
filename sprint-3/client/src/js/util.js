@@ -23,12 +23,13 @@ export function orderComments(videoDetail) {
     let currentCommentsList = videoDetail.comments;
     let newCommentsList = [];
 
-    if (currentCommentsList.length > 3) {
+    if (currentCommentsList.length > 3 &&
+        currentCommentsList[0].name === 'Micheal Lyons') {
         newCommentsList = currentCommentsList.slice(3).reverse()
         currentCommentsList.splice(3, currentCommentsList.length - 3)
         newCommentsList = newCommentsList.concat(currentCommentsList);
     } else {
-        newCommentsList = currentCommentsList;
+        newCommentsList = currentCommentsList.reverse();
     }
 
     videoDetail.comments = newCommentsList;
@@ -91,6 +92,5 @@ export function generateTimeStamp(commentObjDate) {
             break;
         default:
     };
-
     return tsText;
 };

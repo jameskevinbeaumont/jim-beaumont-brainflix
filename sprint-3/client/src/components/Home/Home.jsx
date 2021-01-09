@@ -19,6 +19,7 @@ class Home extends React.Component {
         videos: [],
         activeVideo: { id: '', title: '', channel: '', image: '' },
         activeVideoDetail: InitializeAVD(),
+        commentCount: 0,
         refreshWithID: false
     };
 
@@ -59,6 +60,7 @@ class Home extends React.Component {
                 axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${firstVideo.id}`)
                     .then(result => {
                         this.setState({ activeVideoDetail: orderComments(result.data) })
+                        this.setState({ commentCount: result.data.comments.length })
                         this.setState({ activeVideo: firstVideo })
                         this.setState({ refreshWithID: false })
                     })
@@ -95,6 +97,7 @@ class Home extends React.Component {
             axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${video.id}`)
                 .then(result => {
                     this.setState({ activeVideoDetail: orderComments(result.data) })
+                    this.setState({ commentCount: result.data.comments.length })
                     this.setState({ activeVideo: newActiveVideo })
                     this.setState({ videos: newVideos })
                 })
@@ -110,6 +113,7 @@ class Home extends React.Component {
         axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${this.state.activeVideo.id}`)
             .then(result => {
                 this.setState({ activeVideoDetail: orderComments(result.data) })
+                this.setState({ commentCount: result.data.comments.length })
             })
             .catch(err => console.log('Error=>', err.response))
     };
@@ -128,7 +132,7 @@ class Home extends React.Component {
                 <main className="main">
                     <div className="main__left">
                         <VideoDesc videoObj={this.state.activeVideoDetail} />
-                        <NewComment videoID={this.state.activeVideo.id} updateComment={this.updateNewComment} />
+                        <NewComment videoID={this.state.activeVideo.id} commentCount={this.state.commentCount} updateComment={this.updateNewComment} />
                         <CommentList videoComments={this.state.activeVideoDetail.comments} />
                     </div>
                     <div className="main__right">

@@ -34,7 +34,6 @@
             @include padding-tb(3vh, 1vh);
             padding-right: 0;
             margin-right: 0;
-            // width: 94%;
         }
     }
     &__header {
@@ -46,7 +45,7 @@
         border-bottom: 2px solid $color-divider;
         @include tablet {
             flex-direction: row;
-            justify-content: flex-end;
+            justify-content: flex-start;
         }
         &-left {
             /* Video Description Block - Left Container Element */
@@ -55,7 +54,7 @@
             height: 45px;
             width: 100vw;
             @include tablet {
-                width: 72vw;
+                width: 61vw;
                 height: 37px;
                 padding: 0;
             }
@@ -69,7 +68,7 @@
             @include tablet {
                 justify-content: center;
                 height: 37px;
-                width: 28vw; //58vw;
+                width: 28vw;
                 padding: 0;
             }
 		}
@@ -131,6 +130,7 @@
     @include flex-center;
     flex-direction: column;
     padding-top: 16px;
+    width: 100%;
     @include desktop {
         justify-content: flex-start;
         flex-direction: row;
@@ -139,7 +139,8 @@
         /* Videodesc Details Block - Paragraph Element */
         @include mobile-h5-label;
         @include mobile-h4-list-contact;
-        padding-top: 1vh;    
+        width: 100%;
+        padding-top: 1vh; 
         @include tablet {
             line-height: 22px;
             width: 70%;

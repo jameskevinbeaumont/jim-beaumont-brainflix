@@ -53,6 +53,7 @@ export class NewComment extends Component {
 
     // onClick event for the COMMENT button
     commentBtnClick = () => {
+        // console.log('commentBtnClick');
         if (this.state.comment.replace(/\s/g, '') === '') {
             alert('Please enter a comment!');
             this.setState({
@@ -89,7 +90,7 @@ export class NewComment extends Component {
         return (
             // New Comment Section
             <section className="newcomment">
-                <h2 className="newcomment__title">3 Comments</h2>
+                <h2 className="newcomment__title">{this.props.commentCount} Comments</h2>
                 <form className="newcomment__form" id="newcomment__form" action="">
                     <div className="newcomment__form-image">
                         <img className="newcomment__image" src={commentImage} alt="new comment pic" />

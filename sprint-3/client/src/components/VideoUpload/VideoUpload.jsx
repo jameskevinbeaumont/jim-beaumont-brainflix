@@ -33,14 +33,16 @@ export default function VideoUpload() {
         // Set the image path
         let splitString = form.image.value.split("\\");
         let imagePath = `${window.location.protocol}//${window.location.host}/assets/images/${splitString[2]}`;
+        let videoPath = `${window.location.protocol}//${window.location.host}/assets/video/Lime Rock - 07-27-2020 - Session 1 (Best Lap).mp4`;
         // Build the new video object
         let newVideo = {
             title: form.videouploadTitle.value,
             channel: 'Jim Beaumont',
             image: imagePath,
             description: form.videouploadDesc.value,
-            duration: '5:32',
-            video: 'https://project-2-api-herokuapp.com/stream'
+            duration: '1:13',
+            video: videoPath
+            // video: 'https://project-2-api-herokuapp.com/stream'
         };
         // Perform an axios POST of the new video
         // First, axios POST to video list
@@ -51,11 +53,22 @@ export default function VideoUpload() {
         })
             .then(result => {
                 // Second, axios POST to video detail
-                
-                // Reset the form inputs
-                form.image.value = ''
-                form.videouploadTitle.value = ''
-                form.videouploadDesc.value = ''
+                axios.post(`${window.$BF_URL}${window.$BF_VIDEOS}/result.data.id`, {
+                    id: result.data.id,
+                    title: newVideo.title,
+                    channel: newVideo.channel,
+                    image: imagePath,
+                    description: newVideo.description,
+                    duration: newVideo.duration,
+                    video: newVideo.video
+                })
+                    .then(result => {
+                        // Reset the form inputs
+                        form.image.value = ''
+                        form.videouploadTitle.value = ''
+                        form.videouploadDesc.value = ''
+                    })
+                    .catch(err => console.log('Error=>', err.response));
             })
             .catch(err => console.log('Error=>', err.response));
     };

@@ -28,4 +28,3 @@ app.get('/', function (_req, res) {
 });
 
 app.listen(process.env.PORT, error => error ? console.error(error) : console.info(`BrainFlix server:  Listening on port ${process.env.PORT}`));
-// console.log(process.env);

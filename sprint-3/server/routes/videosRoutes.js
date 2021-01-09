@@ -3,6 +3,7 @@ const router = express.Router();
 
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
+//const fsp = require('fs').promises;
 
 // Route /videos - GET and POST
 router.route('/')
@@ -108,7 +109,7 @@ router.route('/:id')
                     likes: '0',
                     duration: videoData.duration,
                     video: videoData.video,
-                    timesstamp: Date.now(),
+                    timestamp: Date.now(),
                     comments: []
                 };
                 // Append the new Video Detail object
@@ -126,11 +127,26 @@ router.route('/:id')
         });
     });
 
+// const getVideoDetails = () => {
+//     fsp.readFile('./data/videos-detail.json')
+//         .then((data) => {
+//             //console.log(JSON.parse(data));
+//             let videoArray = JSON.parse(data);
+//             return videoArray;
+//             //return JSON.parse(data);
+//         })
+//         .catch((err) => { return err });
+// };
+
 // Route /videos/:id/comments - POST
 router.route('/:id/comments')
     // Write - POST Comment for Video by Video ID method
     .post((req, res) => {
         // Get the video detail based on the ID passed
+        // const videoDetails = getVideoDetails();
+        // const videoDetails = getVideoDetails();
+        // console.log(videoDetails);
+        // console.log(getVideoDetails());
         fs.readFile('./data/videos-detail.json', (err, data) => {
             if (err) {
                 return res.status(500).send(`Unable to locate the video detail data`);
@@ -154,7 +170,7 @@ router.route('/:id/comments')
                     comment: commentData.comment,
                     id: uuidv4(),
                     likes: 0,
-                    timesstamp: Date.now()
+                    timestamp: Date.now()
                 }
                 // Append the comment data
                 videoDetails[videoIndex].comments.push(newComment);
@@ -164,7 +180,6 @@ router.route('/:id/comments')
                     if (err) {
                         res.status(400).send(`Error writing file: ${err}`);
                     } else {
-                        // res.status(200).send(videoDetails[videoIndex].comments);
                         res.status(200).send(newComment);
                     };
                 });

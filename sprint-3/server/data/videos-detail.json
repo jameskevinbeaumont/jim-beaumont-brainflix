@@ -371,8 +371,8 @@
         "description": "What a weekend with crazy cold/wet/snowy weather and a lot of enthusiastic regular folks coming out to run their street and track cars at Watkins Glen International! Even with the less than stellar weather, everyone reports that they had a great time running the full course at WGI!",
         "views": "0",
         "likes": "0",
-        "duration": "1:13",
-        "video": "http://localhost:3000/assets/video/Lime Rock - 07-27-2020 - Session 1 (Best Lap).mp4",
+        "duration": "5:00",
+        "video": "http://localhost:3000/assets/video/WGI-April-2019.mp4",
         "timestamp": 1610059308497,
         "comments": [
             {
@@ -404,5 +404,18 @@
                 "timestamp": 1610146415733
             }
         ]
+    },
+    {
+        "id": "2f1b6379-dbee-4b5a-8ff7-189ea373ced1",
+        "title": "Lime Rock Summer Fun!",
+        "channel": "Jim Beaumont",
+        "image": "http://localhost:3000/assets/images/video-list-110.jpg",
+        "description": "It was an awesome summer day at Lime Rock Park as novices and advanced alike took to the 1.5 mile road course. Everyone was safe and fast as they thoroughly enjoyed Big Bend, No Name Straight, the Uphill, West Bend, the Downhill and the always fast and alluring Sam Posey Straight. Good times!",
+        "views": "0",
+        "likes": "0",
+        "duration": "1:13",
+        "video": "http://localhost:3000/assets/video/Lime Rock - 07-27-2020 - Session 1 (Best Lap).mp4",
+        "timestamp": 1610156618139,
+        "comments": []
     }
 ]

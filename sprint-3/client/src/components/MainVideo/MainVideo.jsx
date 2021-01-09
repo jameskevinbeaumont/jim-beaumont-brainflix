@@ -34,6 +34,11 @@ export default function MainVideo({ videoObj }) {
     const progressHandler = (e) => {
         let video = document.getElementById('video-player');
         let lapsedTime = document.getElementById('video-loader-lapsed');
+        let progress = document.getElementById('progress');
+
+        let duration = videoObj.duration.split(":");
+        let totalTimeSecs = (Number(duration[0]) * 60) + Number(duration[1]);
+        progress.value = (video.currentTime / totalTimeSecs) * 100;
 
         lapsedTime.innerText = getTime(video.currentTime);
     };
@@ -66,7 +71,10 @@ export default function MainVideo({ videoObj }) {
                     />
                 </div>
                 <div className="video__loader-container">
-                    <div className="video__loader"></div>
+                    <div className="video__loader">
+                        <progress id="progress" value="0" max="100">
+                        </progress>
+                    </div>
                     <div className="video__loader-time">
                         <div className="video__loader-lapsed" id="video-loader-lapsed">0:00</div>
                         <div className="video__loader-time-divider">/</div>

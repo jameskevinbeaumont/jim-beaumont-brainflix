@@ -8,6 +8,7 @@ export default function VideoDesc({ videoObj }) {
     const iconLikes = './assets/icons/Icon-likes.svg';
     let likes = videoObj.likes;
 
+    // Function - Increment likes count
     const incrementLikes = (e) => {
         axios.put(`${window.$BF_URL}${window.$BF_VIDEOS}/${videoObj.id}/likes`, {
             likes: videoObj.likes

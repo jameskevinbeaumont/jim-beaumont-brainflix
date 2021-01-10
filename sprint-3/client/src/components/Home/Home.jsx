@@ -26,7 +26,6 @@ class Home extends React.Component {
     // Lifecycle method allowing code to execute after component is 
     // already placed in the DOM, after the component is rendered 
     componentDidMount() {
-        // console.log('Home - componentDidMount');
         this._isMounted = true;
         const rprops = this.props;
 
@@ -53,8 +52,9 @@ class Home extends React.Component {
                     firstVideo = result.data[arrIndex]
                     sideVideos = result.data.filter(video => video.id !== rprops.match.params.id)
                 }
-                // console.log('Home - state -> videos being set');
+
                 this.setState({ videos: sideVideos })
+
                 // Axios GET to obtain detailed video data based on
                 // the video displayed in the main player
                 axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${firstVideo.id}`)
@@ -73,7 +73,6 @@ class Home extends React.Component {
     // get new video detail for the main video player if the user
     // selects a video from the side video list
     componentDidUpdate() {
-        // console.log('Home - componentDidUpdate');
         if (this.state.refreshWithID) return;
 
         const rprops = this.props;
@@ -109,7 +108,6 @@ class Home extends React.Component {
     // updated video detail and re-order the comments from newest
     // to oldest
     updateNewComment = () => {
-        // console.log('Home - updateNewComment');
         axios.get(`${window.$BF_URL}${window.$BF_VIDEOS}${this.state.activeVideo.id}`)
             .then(result => {
                 this.setState({ activeVideoDetail: orderComments(result.data) })
@@ -120,7 +118,6 @@ class Home extends React.Component {
 
     // Lifecycle method called when the component will unmount
     componentWillUnmount() {
-        // console.log('Home - componentWillUnmount');
         this._isMounted = false;
     };
 

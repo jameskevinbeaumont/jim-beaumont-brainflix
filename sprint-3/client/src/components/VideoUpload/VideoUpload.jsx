@@ -6,16 +6,20 @@ export default function VideoUpload() {
     let imagePath = '../../assets/images/Upload-video-preview.jpg';
     let cancelClick = false;
 
+    // Function - Load thumbnail image file selected
     const loadFile = (e) => {
         imagePath = e.target.value;
         const splitString = imagePath.split("\\");
         document.getElementById('vut-1').style.backgroundImage = `url(../../assets/images/${splitString[2]})`;
     };
 
+    // Function - Cancel button clicked
     const cancelUpload = () => {
         cancelClick = true;
     };
 
+    // Function - Form onSubmit - Either Cancel or attempt
+    //            to publish the new video
     const videoUpload = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -42,7 +46,7 @@ export default function VideoUpload() {
             alert('Video description not provided!');
             return;
         };
-        // Set the image path
+        // Set the image and video paths
         let splitString = form.image.value.split("\\");
         let imagePath = `${window.location.protocol}//${window.location.host}/assets/images/${splitString[2]}`;
         let videoPath = `${window.location.protocol}//${window.location.host}/assets/video/Lime Rock - 07-27-2020 - Session 1 (Best Lap).mp4`;

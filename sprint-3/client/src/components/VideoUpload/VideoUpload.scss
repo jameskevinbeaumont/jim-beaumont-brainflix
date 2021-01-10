@@ -28,6 +28,7 @@
         }
     }
     &__main {
+        /* Video Upload Block - Main Element */
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -38,6 +39,7 @@
             flex-direction: row;
         }
         &-left {
+            /* Video Upload Block - Main Left Element */
             display: flex;
             align-content: center;
             flex-direction: column;
@@ -50,6 +52,7 @@
             }
         }
         &-right {
+            /* Video Upload Block - Main Right Element */
             display: flex;
             flex-direction: column;
             width: 90vw;
@@ -62,6 +65,7 @@
         }
     }
     &__thumbnail {
+        /* Video Upload Block - Thumbnail Element */
         position: relative;
         @include flex-center;
         height: 48vw;
@@ -80,6 +84,7 @@
             margin-bottom: 0;
         }
         &-title {
+            /* Video Upload Block - Thumbnail Title Element */
             @include mobile-h5-label($color-text-label-style);
             font-weight: 500;
             width: 100%;        
@@ -89,25 +94,30 @@
             }
         }
         &-upload-title {
+            /* Video Upload Block - Thumbnail Upload Title Element */
             @include mobile-h5-label($color-text-label-style);
             font-weight: 500;
             width: 100%;        
         }
         &-upload {
+            /* Video Upload Block - Thumbnail Upload Element */
             font-family: $font-family;
             padding-bottom: 1rem;
         }
     }
     &__form {
+        /* Video Upload Block - Form Element */
         display: flex;
         flex-direction: column;
         width: 100%;
         &-label {
+            /* Video Upload Block - Form Label Element */
             @include mobile-h5-label($color-text-label-style);
             @include tablet {
                 padding-left: 4%;
             }
             &--title {
+                /* Video Upload Block - Form Label Element - Title Modifier */
                 @extend .videoupload__form-label;
                     width: 90%;
                 @include tablet {
@@ -118,6 +128,7 @@
                 }
             }
             &--description {
+                /* Video Upload Block - Form Label Element - Description Modifier */
                 @extend .videoupload__form-label--title;
                 @include tablet {
                     padding-left: 0;
@@ -131,6 +142,7 @@
             }
         }
         &-input {
+            /* Video Upload Block - Form Input Element */
             font-family: $font-family;
             height: 45px;
             width: 90vw;
@@ -152,6 +164,7 @@
             }
         }
         &-textarea {
+            /* Video Upload Block - Form Textarea Element */
             font-family: $font-family;
             height: 143px;
             width: 90vw;
@@ -183,6 +196,7 @@
         }
     }
     &__button-container {
+        /* Video Upload Block - Form Button Container Element */
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -196,6 +210,7 @@
         }
     }
     &__publish-btn {
+        /* Video Upload Block - Form Publish Button Element */
         color: $color-text-offset;
         background-color: $color-primary-cta;
         height: 40px;
@@ -211,6 +226,7 @@
         }
     }
     &__cancel-btn {
+        /* Video Upload Block - Form Cancel Button Element */
         color: $color-primary-cta;
         background-color: $color-background;
         height: 40px;

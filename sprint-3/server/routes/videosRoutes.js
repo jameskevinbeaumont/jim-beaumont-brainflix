@@ -3,7 +3,6 @@ const router = express.Router();
 
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
-//const fsp = require('fs').promises;
 
 // Route /videos - GET and POST
 router.route('/')
@@ -127,33 +126,18 @@ router.route('/:id')
         });
     });
 
-// const getVideoDetails = () => {
-//     fsp.readFile('./data/videos-detail.json')
-//         .then((data) => {
-//             //console.log(JSON.parse(data));
-//             let videoArray = JSON.parse(data);
-//             return videoArray;
-//             //return JSON.parse(data);
-//         })
-//         .catch((err) => { return err });
-// };
-
 // Route /videos/:id/comments - POST
 router.route('/:id/comments')
     // Write - POST Comment for Video by Video ID method
     .post((req, res) => {
         // Get the video detail based on the ID passed
-        // const videoDetails = getVideoDetails();
-        // const videoDetails = getVideoDetails();
-        // console.log(videoDetails);
-        // console.log(getVideoDetails());
         fs.readFile('./data/videos-detail.json', (err, data) => {
             if (err) {
                 return res.status(500).send(`Unable to locate the video detail data`);
             } else {
                 // Get all of the video detail records
                 const videoDetails = JSON.parse(data);
-                // Get the index of the video detail associated with the id passed
+                //Get the index of the video detail associated with the id passed
                 const videoIndex = videoDetails.findIndex(video => video.id === req.params.id);
                 if (videoIndex === -1) {
                     return res.status(400).send(`No video with that id (${req.params.id}) exists`);
@@ -216,6 +200,38 @@ router.route('/:videoId/comments/:commentId')
                         res.status(400).send(`Error writing file: ${err}`);
                     } else {
                         res.status(200).send(removedComment);
+                    };
+                });
+            };
+        });
+    });
+
+// Route /videos/:videoId/likes - PUT
+router.route('/:videoId/likes')
+    // Put - Increment likes by Video ID
+    .put((req, res) => {
+        // Get the video detail based on the ID passed
+        fs.readFile('./data/videos-detail.json', (err, data) => {
+            if (err) {
+                return res.status(500).send(`Unable to locate the video detail data`);
+            } else {
+                // Get all of the video detail records
+                const videoDetails = JSON.parse(data);
+                // Get the index of the video detail associated with the videoId passed
+                const videoIndex = videoDetails.findIndex(video => video.id === req.params.videoId);
+                if (videoIndex === -1) {
+                    return res.status(400).send(`No video with that id (${req.params.videoId}) exists`);
+                };
+                // Get the likes count, increment it and return the incremented (and formatted) value
+                let likesCount = parseInt(videoDetails[videoIndex].likes.replace(/,/g, ''));
+                likesCount = ++likesCount;
+                videoDetails[videoIndex].likes = likesCount.toLocaleString();
+                const stringifyData = JSON.stringify(videoDetails);
+                fs.writeFile('./data/videos-detail.json', stringifyData, 'utf8', (err) => {
+                    if (err) {
+                        res.status(400).send(`Error writing file: ${err}`);
+                    } else {
+                        res.status(200).send(likesCount.toLocaleString());
                     };
                 });
             };

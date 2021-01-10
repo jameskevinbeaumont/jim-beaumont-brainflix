@@ -4,6 +4,7 @@ import './VideoUpload.scss';
 
 export default function VideoUpload() {
     let imagePath = '../../assets/images/Upload-video-preview.jpg';
+    let cancelClick = false;
 
     const loadFile = (e) => {
         imagePath = e.target.value;
@@ -11,9 +12,20 @@ export default function VideoUpload() {
         document.getElementById('vut-1').style.backgroundImage = `url(../../assets/images/${splitString[2]})`;
     };
 
+    const cancelUpload = () => {
+        cancelClick = true;
+    };
+
     const videoUpload = (e) => {
         e.preventDefault();
         const form = e.target;
+
+        if (cancelClick) {
+            cancelClick = false;
+            alert('Upload aborted!');
+            window.location.href = '/';
+            return;
+        };
 
         // Check for valid input
         if (!form.image.value) {
@@ -42,7 +54,6 @@ export default function VideoUpload() {
             description: form.videouploadDesc.value,
             duration: '1:13',
             video: videoPath
-            // video: 'https://project-2-api-herokuapp.com/stream'
         };
         // Perform an axios POST of the new video
         // First, axios POST to video list
@@ -63,14 +74,21 @@ export default function VideoUpload() {
                     video: newVideo.video
                 })
                     .then(result => {
+                        alert(`Video (${result.data.title}) successfully uploaded!`);
                         // Reset the form inputs
                         form.image.value = ''
                         form.videouploadTitle.value = ''
                         form.videouploadDesc.value = ''
                     })
-                    .catch(err => console.log('Error=>', err.response));
+                    .catch(err => {
+                        alert(`Video did not upload! Error => ${err.response}`)
+                        console.log('Error=>', err.response)
+                    });
             })
-            .catch(err => console.log('Error=>', err.response));
+            .catch(err => {
+                alert('Video did not upload - check console for error!')
+                console.log('Error=>', err.response)
+            });
     };
 
     return (
@@ -102,7 +120,7 @@ export default function VideoUpload() {
                     </div>
                     <div className="videoupload__button-container">
                         <button className="videoupload__publish-btn" id="videoupload__publish-btn">PUBLISH</button>
-                        <button className="videoupload__cancel-btn" id="videoupload__cancel-btn">CANCEL</button>
+                        <button className="videoupload__cancel-btn" id="videoupload__cancel-btn" onClick={cancelUpload}>CANCEL</button>
                     </div>
                 </form>
             </div>

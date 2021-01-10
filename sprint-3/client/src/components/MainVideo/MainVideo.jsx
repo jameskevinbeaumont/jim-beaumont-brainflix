@@ -7,7 +7,10 @@ export default function MainVideo({ videoObj }) {
     const iconFullScreen = './assets/icons/Icon-fullscreen.svg';
     const iconVolume = './assets/icons/Icon-volume.svg';
 
-    const playPause = (e) => {
+    let iconPathPause = iconPause.split("/");
+    const iconPauseFile = iconPathPause[iconPathPause.length - 1];
+
+    const playPauseHandler = (e) => {
         let video = document.getElementById('video-player');
         let icon = document.getElementById('video-play-icon');
 
@@ -20,7 +23,7 @@ export default function MainVideo({ videoObj }) {
         };
     };
 
-    const volumeUpDown = (e) => {
+    const volumeHandler = (e) => {
         let video = document.getElementById('video-player');
         let currentVolume = Math.floor(video.volume * 10) / 10;
 
@@ -28,6 +31,32 @@ export default function MainVideo({ videoObj }) {
             video.volume += 0.1;
         } else if (currentVolume > 0.81) {
             video.volume = 0;
+        };
+    };
+
+    const fullScreenHandler = (e) => {
+        let video = document.getElementById('video-player');
+
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) { /* Safari */
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { /* IE11 */
+            video.msRequestFullscreen();
+        };
+    };
+
+    document.onfullscreenchange = function (e) {
+        let video = document.getElementById('video-player');
+        let icon = document.getElementById('video-play-icon');
+
+        let iconURL = icon.src.split("/");
+        let iconCurrent = iconURL[iconURL.length - 1];
+
+        if ((video.paused || video.ended) && (iconCurrent === iconPauseFile)) {
+            icon.src = iconPlay;
+        } else {
+            icon.src = iconPause;
         };
     };
 
@@ -47,7 +76,7 @@ export default function MainVideo({ videoObj }) {
         return (Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2));
     };
 
-    const videoEnd = (e) => {
+    const videoEndHandler = (e) => {
         let icon = document.getElementById('video-play-icon');
 
         icon.src = iconPlay;
@@ -60,11 +89,11 @@ export default function MainVideo({ videoObj }) {
                 poster={videoObj.image}
                 src={videoObj.video + window.$BF_API_KEY}
                 onTimeUpdate={progressHandler}
-                onEnded={videoEnd}
+                onEnded={videoEndHandler}
             >
             </video>
             <div className="video__controls">
-                <div className="video__play-container" onClick={playPause}>
+                <div className="video__play-container" onClick={playPauseHandler}>
                     <img className="video__play-icon" id="video-play-icon"
                         src={iconPlay}
                         alt="play icon"
@@ -82,9 +111,12 @@ export default function MainVideo({ videoObj }) {
                     </div>
                 </div>
                 <div className="video__fullscreen-volume-container">
-                    <img className="video__fullscreen-icon" src={iconFullScreen} alt="fullscreen icon" />
+                    <img className="video__fullscreen-icon"
+                        onClick={fullScreenHandler}
+                        src={iconFullScreen}
+                        alt="fullscreen icon" />
                     <img className="video__volume-icon"
-                        onClick={volumeUpDown}
+                        onClick={volumeHandler}
                         id="video-volume-icon"
                         src={iconVolume}
                         alt="volume icon"

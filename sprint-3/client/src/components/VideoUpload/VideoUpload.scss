@@ -93,14 +93,25 @@
                 @include padding-tb(4.5vh, 0);
             }
         }
-        &-upload-title {
-            /* Video Upload Block - Thumbnail Upload Title Element */
+        &-upload-img-title {
+            /* Video Upload Block - Thumbnail Upload Image Title Element */
             @include mobile-h5-label($color-text-label-style);
             font-weight: 500;
             width: 100%;        
         }
-        &-upload {
-            /* Video Upload Block - Thumbnail Upload Element */
+        &-img-upload {
+            /* Video Upload Block - Thumbnail Image Upload Element */
+            font-family: $font-family;
+            padding-bottom: 0.25rem;
+        }
+        &-upload-vid-title {
+            /* Video Upload Block - Thumbnail Upload Video Title Element */
+            @include mobile-h5-label($color-text-label-style);
+            font-weight: 500;
+            width: 100%;        
+        }
+        &-vid-upload {
+            /* Video Upload Block - Thumbnail Video Upload Element */
             font-family: $font-family;
             padding-bottom: 1rem;
         }
@@ -124,7 +135,7 @@
                     padding-left: 0;
                 }
                 @include desktop {
-                    padding-top: 4.5vh;
+                    padding-top: 0.5vh;
                 }
             }
             &--description {

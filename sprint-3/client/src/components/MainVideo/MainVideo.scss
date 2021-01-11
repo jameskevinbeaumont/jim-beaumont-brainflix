@@ -87,23 +87,20 @@
             width: 155%;
         }
     }
-
     progress[value] {
         -webkit-appearance: none;
         appearance: none;
         width: 76%;
-        height: 26%;
-        margin: 0.85rem 0 0 0.95rem;
+        height: 20%;
+        margin: 0.95rem 0 0 0.95rem;
         @include tablet {
             width: 96%;
         }
     }
-    
     progress[value]::-webkit-progress-bar {
         background-color: black;
         border-radius: 2px;
     }
-    
     progress[value]::-webkit-progress-value {
         background-color: $color-primary-cta;
     }

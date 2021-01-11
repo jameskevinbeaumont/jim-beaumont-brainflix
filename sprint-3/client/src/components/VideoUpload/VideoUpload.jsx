@@ -37,6 +37,11 @@ export default function VideoUpload() {
             return;
         };
 
+        if (!form.video.value) {
+            alert('Video not provided!');
+            return;
+        };
+
         if (!form.videouploadTitle.value || form.videouploadTitle.value.trim() === '') {
             alert('Video title not provided!');
             return;
@@ -49,7 +54,8 @@ export default function VideoUpload() {
         // Set the image and video paths
         let splitString = form.image.value.split("\\");
         let imagePath = `${window.location.protocol}//${window.location.host}/assets/images/${splitString[2]}`;
-        let videoPath = `${window.location.protocol}//${window.location.host}/assets/video/Lime Rock - 07-27-2020 - Session 1 (Best Lap).mp4`;
+        splitString = form.video.value.split("\\");
+        let videoPath = `${window.location.protocol}//${window.location.host}/assets/video/${splitString[2]}`;
         // Build the new video object
         let newVideo = {
             title: form.videouploadTitle.value,
@@ -104,8 +110,10 @@ export default function VideoUpload() {
                     <div className="videoupload__main-left">
                         <h3 className="videoupload__thumbnail-title">VIDEO THUMBNAIL</h3>
                         <div className="videoupload__thumbnail" id="vut-1" style={{ backgroundImage: `url(${imagePath})` }}></div>
-                        <label className="videoupload__thumbnail-upload-title" htmlFor="file">UPLOAD IMAGE</label>
-                        <input type="file" onChange={loadFile} className="videoupload__thumbnail-upload" accept="image/*" name="image" id="file"></input>
+                        <label className="videoupload__thumbnail-upload-img-title" htmlFor="file">UPLOAD IMAGE</label>
+                        <input type="file" onChange={loadFile} className="videoupload__thumbnail-img-upload" accept="images/*" name="image" id="file-img"></input>
+                        <label className="videoupload__thumbnail-upload-vid-title" htmlFor="file">UPLOAD VIDEO</label>
+                        <input type="file" className="videoupload__thumbnail-vid-upload" accept="video/*" name="video" id="file-vid"></input>
                     </div>
                     <div className="videoupload__main-right">
                         <label className="videoupload__form-label--title" htmlFor="videouploadTitle">TITLE YOUR VIDEO</label>

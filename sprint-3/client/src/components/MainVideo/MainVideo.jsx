@@ -10,6 +10,7 @@ export default function MainVideo({ videoObj }) {
     let iconPathPause = iconPause.split("/");
     const iconPauseFile = iconPathPause[iconPathPause.length - 1];
 
+    // Function - Play/Pause Handler (Diving Deeper)
     const playPauseHandler = (e) => {
         let video = document.getElementById('video-player');
         let icon = document.getElementById('video-play-icon');
@@ -23,6 +24,7 @@ export default function MainVideo({ videoObj }) {
         };
     };
 
+    // Function - Volume Handler (Diving Deeper)
     const volumeHandler = (e) => {
         let video = document.getElementById('video-player');
         let currentVolume = Math.floor(video.volume * 10) / 10;
@@ -34,6 +36,7 @@ export default function MainVideo({ videoObj }) {
         };
     };
 
+    // Function - Fullscreen Handler (Diving Deeper)
     const fullScreenHandler = (e) => {
         let video = document.getElementById('video-player');
 
@@ -60,6 +63,7 @@ export default function MainVideo({ videoObj }) {
         };
     };
 
+    // Function - Progress Bar Handler (Diving Deeper)
     const progressHandler = (e) => {
         let video = document.getElementById('video-player');
         let lapsedTime = document.getElementById('video-loader-lapsed');
@@ -72,10 +76,12 @@ export default function MainVideo({ videoObj }) {
         lapsedTime.innerText = getTime(video.currentTime);
     };
 
+    // Function - Time formatting (Diving Deeper)
     const getTime = (time) => {
         return (Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2));
     };
 
+    // Function - End Video Handler (Diving Deeper)
     const videoEndHandler = (e) => {
         let icon = document.getElementById('video-play-icon');
 

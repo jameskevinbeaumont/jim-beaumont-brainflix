@@ -14,7 +14,8 @@ my git status was up to date.
 
 ### Sprint-3
 
-All sprint-3 requirements completed.
+All sprint-3 requirements completed. Client is running on port 3000 and
+the server is running on port 8080.
 
 Note regarding the "Upload Video" page. I took the liberty of adding an 
 "Upload Image" and "Upload Video" section (per Jon's OK) so the user

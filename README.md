@@ -34,4 +34,5 @@ as is for now.
 Note on feedback from Sprint-2 regarding sorting the customer array. I am
 aware of the .sort method, however, you are requiring that the first three
 "default" comments remain in order and their timestamps are all the same,
-so that is why I wrote the orderComments function in util.js.
+so that is why I wrote the orderComments function in util.js and did not 
+use the .sort method.
